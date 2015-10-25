@@ -1,3 +1,5 @@
 .vs
 GreenGov/bin
 GreenGov/obj
+*.suo
+*.user
