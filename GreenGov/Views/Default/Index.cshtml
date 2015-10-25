@@ -50,6 +50,7 @@
                     <div class="data-description">Spent on <strong>Recycled Items</strong> </div>
                 </div>
                 <!-- Chart Here -->
+                <div id="totalrec" style="width:255px;height:120px"></div>
             </div>
             
             <div class="col-sm-6 col-md-3">
@@ -246,6 +247,7 @@ $('#totalrec').highcharts({
 series: [{
     showInLegend: false,
     name: 'Electricity (GWh)',
+    color: lineColor,
         data: dataRec
     }],
   title: {
