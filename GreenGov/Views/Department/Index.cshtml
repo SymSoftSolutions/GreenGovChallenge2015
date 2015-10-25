@@ -24,31 +24,13 @@
 
 <div id="attach"></div>
 
+
 <script src="/JS/d3.min.js"></script>
+    <script type="text/javascript">
+      
+    </script>
 <script src="/JS/treemap.js"></script>
 
-    <script type="text/javascript">
-        var depts;
 
-        $(document).ready(function () {
-            $.ajax({
-                url: '@Url.Content("~/Data/Departments.csv")',
-                success: function (csv) {
-                    depts = d3.csv.parse(csv);
-
-                    var dept = findDepartment("ARB");
-                    $("#deptTest").html(dept.Sustainability);
-                }
-            });
-        });
-
-        function findDepartment(acronym) {
-            for (var i = 0, len = depts.length; i < len; i++) {
-                if (depts[i].Acronym === acronym)
-                    return depts[i]; // Return as soon as the object is found
-            }
-            return null; // The object was not found
-        }
-    </script>
 </body>
 </html>

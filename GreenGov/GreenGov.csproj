@@ -149,6 +149,7 @@
     <Content Include="Global.asax" />
     <Content Include="JS\d3.min.js" />
     <Content Include="JS\energyMetrics.js" />
+    <Content Include="JS\findDepartments.js" />
     <Content Include="JS\treemap.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -208,6 +209,18 @@
   <ItemGroup>
     <Content Include="Data\energy2013.csv" />
     <Content Include="Data\energy2014.csv" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Data\CO2\CO2eByYear.csv" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Data\CO2\agency_co2_per_year.csv" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Data\Fleet\NonRenewableFuelVehiclesByYear.csv" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Data\Fleet\FleetAverageMPGByYear.csv" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Data\Recycling\RecyclingPurchasesByYear.csv" />
