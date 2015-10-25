@@ -4013,19 +4013,19 @@ body.homepage .subtext {
   background: url(../images/homepage-hero.png) no-repeat center bottom;
   height: 617px;
 }
-.internal.header {
+.internal header {
   background: url(../images/department-hero-x.png) no-repeat center top;
   height: 160px;
 }
-.internal.header h1 {
+.internal header h1 {
   text-transform: uppercase;
+  text-shadow: 0 1px 8px #fdf6d9;
 }
 @media (max-width: 767px) {
-  .internal.header h1 {
+  .internal header h1 {
     font-size: 32px;
     line-height: 60px;
     text-align: center;
-    text-shadow: 0 1px 8px #fdf6d9;
   }
 }
 /* -----------------------------------------
@@ -4043,6 +4043,7 @@ footer {
 .data-dashboard .data-value {
   font-size: 48px;
   font-weight: bold;
+  margin-bottom: 10px;
 }
 .data-dashboard .glyphicon {
   font-size: 36px;
