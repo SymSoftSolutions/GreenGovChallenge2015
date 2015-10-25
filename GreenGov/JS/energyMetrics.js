@@ -248,7 +248,7 @@ function RecyleTotals(dataset) {
     // Create Charts
     $('#recycle').highcharts({
       chart: {
-          type: 'line',
+          type: 'column',
           backgroundColor: 'rgba(0,0,0,0)'
       },
     series: [{
