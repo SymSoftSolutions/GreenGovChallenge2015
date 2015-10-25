@@ -400,5 +400,5 @@ function FleetType() {
       Co2Metrics();
       RecyclingMetrics();
       FleetMetrics();
-FleetType();
+      FleetType();
     });
