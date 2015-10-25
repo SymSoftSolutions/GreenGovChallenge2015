@@ -21,7 +21,7 @@
         <div id="energy" style="float:left;width:400px;height:400px"></div>
         <div style="clear:both;"></div>
             <div id="co2" style="float:left;width:400px;height:400px"></div>
-            <div id="anotherTwo" style="float:left;width:400px;height:400px"></div>
+            <div id="recycle" style="float:left;width:400px;height:400px"></div>
         </div>
 
 
@@ -70,25 +70,6 @@
         });
 
 
-            $.get('@Url.Content("~/Data/Recycling/RecyclingPurchasesByYear.csv")', function (csv) {
-                $('#anotherTwo').highcharts({
-                    chart: {
-                        type: 'line'
-                    },
-                    data: {
-                        csv: csv
-                    },
-                    title: {
-                        text: 'Recycled Purchases'
-                    },
-                    yAxis: {
-                        min: 0,
-                        title: {
-                            text: 'Percent of Recycled Purchases'
-                        }
-                    }
-                });
-            });
         }
 
         $(document).ready(function () {
