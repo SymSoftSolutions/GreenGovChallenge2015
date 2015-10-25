@@ -21,7 +21,8 @@ body.homepage {
     height:619px;
 }
 
-iframe {
+// NOTE: If other iframes are n
+.embed-mapthat, .embed-tree-chart {
     height:700px;
     width:100%;
     border:none;
@@ -32,7 +33,13 @@ header {
     height:160px;
     
     h1 {
-        //line-height:60px;
         text-transform:uppercase;
+        
+        @media (max-width: @screen-xs-max) {
+            font-size:32px;
+            line-height:60px;
+            text-align:center;
+            text-shadow:0 1px 8px @body-bg;
+        }
     }
 }

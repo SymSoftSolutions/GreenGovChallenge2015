@@ -1072,7 +1072,7 @@ body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
   line-height: 1.42857143;
-  color: #333333;
+  color: #464545;
   background-color: #fdf6d9;
 }
 input,
@@ -2585,7 +2585,7 @@ select[multiple].input-lg {
   display: block;
   margin-top: 5px;
   margin-bottom: 10px;
-  color: #737373;
+  color: #868484;
 }
 @media (min-width: 768px) {
   .form-inline .form-group {
@@ -3997,7 +3997,8 @@ body.homepage h1 {
   background: url(../images/homepage-hero.png) no-repeat center bottom;
   height: 619px;
 }
-iframe {
+.embed-mapthat,
+.embed-tree-chart {
   height: 700px;
   width: 100%;
   border: none;
@@ -4008,4 +4009,53 @@ header {
 }
 header h1 {
   text-transform: uppercase;
+}
+@media (max-width: 767px) {
+  header h1 {
+    font-size: 32px;
+    line-height: 60px;
+    text-align: center;
+    text-shadow: 0 1px 8px #fdf6d9;
+  }
+}
+/* -----------------------------------------
+   COMMENT
+----------------------------------------- */
+footer {
+  background: #3d3529;
+  padding: 30px 0;
+  color: #fff;
+  margin-top: 10px;
+}
+/* -----------------------------------------
+   DATA DASHBOARD WIDGETS
+----------------------------------------- */
+.data-dashboard .data-value {
+  font-size: 32px;
+  font-weight: bold;
+}
+.data-dashboard .glyphicon {
+  font-size: 30px;
+  padding-right: 5px;
+}
+.data-dashboard .data-percent {
+  font-size: 46px;
+}
+@media (max-width: 991px) {
+  .data-dashboard {
+    border-bottom: 1px solid #c9c3a5;
+    padding-bottom: 10px;
+  }
+}
+.data-type-water {
+  color: #557981;
+}
+.data-type-recycle {
+  color: #6f812a;
+}
+.data-type-energy {
+  color: #d6655a;
+}
+.data-type-co2e {
+  color: #866442;
 }
