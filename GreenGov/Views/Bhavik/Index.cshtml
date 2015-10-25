@@ -16,31 +16,39 @@
     <div>
         <div id="chartOne" style="float:left;width:400px;height:400px"></div>
         <div id="chartTwo" style="float: left; width: 400px; height: 400px"></div>
+            <div style="clear:both;"></div>
         <div id="water" style="float: left; width: 400px; height: 400px"></div>
         <div id="energy" style="float:left;width:400px;height:400px"></div>
         <div style="clear:both;"></div>
-    </div>
+            <div id="anotherOne" style="float:left;width:400px;height:400px"></div>
+            <div id="anotherTwo" style="float:left;width:400px;height:400px"></div>
+        </div>
+
 
 <script type="text/javascript">
-    function GetFuelMetrics() {
-        $.get('@Url.Content("~/Data/Fleet/RenewableFuelVehiclesByYear.csv")', function(csv) {
-            $('#chartOne').highcharts({
-                chart: {
-                    type: 'line'
-                },
-                data: {
-                    csv: csv
-                },
-                title: {
-                    text: 'Green Vehicles'
-                },
-                yAxis: {
+
+
+        function GetFuelMetrics() {
+            $.get('@Url.Content("~/Data/Fleet/RenewableFuelVehiclesByYear.csv")', function (csv) {
+                $('#chartOne').highcharts({
+                    chart: {
+                        type: 'line'
+                    },
+                    data: {
+                        csv: csv
+                    },
+
                     title: {
-                        text: 'Vehicles'
+                        text: 'Green Vehicles'
+                    },
+                    yAxis: {
+                        title: {
+                            text: 'Vehicles'
+                        }
                     }
-                }
+                });
             });
-        });
+
 
         $.get('@Url.Content("~/Data/Fleet/NonRenewableFuelVehiclesByYear.csv")', function(csv) {
             $('#chartTwo').highcharts({
@@ -60,15 +68,55 @@
                 }
             });
         });
-    }
-
-    $(document).ready(function() {
-        GetFuelMetrics();
-    });
 
 
-</script>
-    <script src="/JS/d3.min.js"></script>
-    <script src="/JS/energyMetrics.js"></script>
+
+            $.get('@Url.Content("~/Data/CO2/CO2eByYear.csv")', function (csv) {
+                $('#anotherOne').highcharts({
+                    chart: {
+                        type: 'line'
+                    },
+                    data: {
+                        csv: csv
+                    },
+                    title: {
+                        text: 'CO2 Emissions'
+                    },
+                    yAxis: {
+                        title: {
+                            text: 'Units of CO2'
+                        }
+                    }
+                });
+            });
+
+            $.get('@Url.Content("~/Data/Recycling/RecyclingPurchasesByYear.csv")', function (csv) {
+                $('#anotherTwo').highcharts({
+                    chart: {
+                        type: 'line'
+                    },
+                    data: {
+                        csv: csv
+                    },
+                    title: {
+                        text: 'Recycled Purchases'
+                    },
+                    yAxis: {
+                        min: 0,
+                        title: {
+                            text: 'Percent of Recycled Purchases'
+                        }
+                    }
+                });
+            });
+        }
+
+        $(document).ready(function () {
+            GetFuelMetrics();
+        });
+
+    </script>
+      <script src="/JS/d3.min.js"></script>
+      <script src="/JS/energyMetrics.js"></script>
 </body>
 </html>

@@ -9,9 +9,9 @@ namespace GreenGov.Controllers
     public class DepartmentController : Controller
     {
         // GET: Department
-        public ActionResult Index(int id)
+        public ActionResult Index(string acronym)
         {
-            return View(id);
+            return View((object)acronym);
         }
     }
 }

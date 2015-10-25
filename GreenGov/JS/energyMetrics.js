@@ -43,7 +43,7 @@ function metricTotals(dataset, field) {
 
   function GetMetrics() {
 
-    $.when($.ajax('Data/energy2013.csv'), $.ajax('Data/energy2014.csv'))
+    $.when($.ajax('/Data/energy2013.csv'), $.ajax('/Data/energy2014.csv'))
       .then(function (csv2013, csv2014) {
         // console.log(csv2013[0], csv2014[0]);
 
