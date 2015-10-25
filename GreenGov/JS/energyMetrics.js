@@ -84,10 +84,11 @@ function metricTotals(dataset, field) {
         type: 'line'
       },
     series: [{
+name: 'kgal used',
             data: [waterTotals2013[department], waterTotals2014[department]]
         }],
       title: {
-        text: 'Water Usage Per'
+        text: 'Department Water Usage'
       },
       xAxis: {
         categories: [
@@ -107,10 +108,11 @@ function metricTotals(dataset, field) {
         type: 'line'
       },
     series: [{
+          name: 'Total Energy Used (kBtu)',
             data: [energyTotals2013[department], energyTotals2014[department]]
         }],
       title: {
-        text: 'Total Energy Usage'
+        text: 'Department Energy Usage'
       },
       xAxis: {
         categories: [
@@ -169,6 +171,7 @@ console.log(perDepartment);
       type: 'line'
     },
   series: [{
+          name: ' State Agency CO2e',
           data: data
       }],
     title: {
