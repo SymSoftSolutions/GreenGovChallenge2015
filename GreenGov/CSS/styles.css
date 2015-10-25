@@ -45,6 +45,6 @@
   fill-opacity: .5;
 }
 
-#attach .children rect.child {
+#attach .children:hover rect.child {
   fill: #bbb;
 }
