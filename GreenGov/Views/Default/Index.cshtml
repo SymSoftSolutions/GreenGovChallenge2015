@@ -88,7 +88,7 @@
 <script src="/JS/d3.min.js"></script>
 <script src="/JS/findDepartments.js"></script>
 <script type="text/javascript">
-
+    var lineColor = '#6F812A';
 var dataco2 = [
   3284977.529,
   3290882.521,
@@ -111,6 +111,7 @@ $('#totalco2').highcharts({
 series: [{
     showInLegend: false,
     name: 'CO2e',
+    color: lineColor,
         data: dataco2
     }],
   title: {
@@ -143,6 +144,7 @@ $('#totalenergy').highcharts({
 series: [{
     showInLegend: false,
     name: 'Energy (kBtu)',
+    color: lineColor,
         data: dataenergy
     }],
   title: {
@@ -176,6 +178,7 @@ $('#totalwater').highcharts({
 series: [{
     showInLegend: false,
     name: 'Water (kgal)',
+    color: lineColor,
         data: datawater
     }],
   title: {
@@ -209,6 +212,7 @@ $('#totalelec').highcharts({
 series: [{
     showInLegend: false,
     name: 'Electricity (GWh)',
+    color: lineColor,
         data: dataElec
     }],
   title: {
