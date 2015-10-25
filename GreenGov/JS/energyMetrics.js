@@ -12,6 +12,7 @@ function isNumeric(n) {
 var department = getURLParameter('acronym') || 'CHP';
 var deptLookup = findDepartment(department);
 
+$('#dept-title').text(deptLookup.CO2e)
 var lineColor = '#6F812A';
 
 function metricTotals(dataset, field) {
