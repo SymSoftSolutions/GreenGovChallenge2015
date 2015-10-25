@@ -225,6 +225,39 @@ series: [{
   }
 });
 
+var dataRec = [
+  // TODO: Check if correct
+  67,
+  70
+];
+var catRec = [
+  '2013',
+  '2014'
+]
+$('#totalrec').highcharts({
+  chart: {
+      type: 'line',
+      backgroundColor: 'rgba(0,0,0,0)'
+  },
+series: [{
+    showInLegend: false,
+    name: 'Electricity (GWh)',
+        data: dataRec
+    }],
+  title: {
+    text: null
+  },
+  xAxis: {
+      labels: { enabled: false },
+      categories: catRec
+  },
+  yAxis: {
+    title: {
+      text: null
+    }
+  }
+});
+
 </script>
 
 <!-- This actually belongs on the department page. -->
