@@ -2864,26 +2864,26 @@ fieldset[disabled] .btn-primary.active {
 }
 .btn-success {
   color: #ffffff;
-  background-color: #5cb85c;
-  border-color: #4cae4c;
+  background-color: #c0da4e;
+  border-color: #b8d639;
 }
 .btn-success:focus,
 .btn-success.focus {
   color: #ffffff;
-  background-color: #449d44;
-  border-color: #255625;
+  background-color: #adcb2a;
+  border-color: #657619;
 }
 .btn-success:hover {
   color: #ffffff;
-  background-color: #449d44;
-  border-color: #398439;
+  background-color: #adcb2a;
+  border-color: #94ad24;
 }
 .btn-success:active,
 .btn-success.active,
 .open > .dropdown-toggle.btn-success {
   color: #ffffff;
-  background-color: #449d44;
-  border-color: #398439;
+  background-color: #adcb2a;
+  border-color: #94ad24;
 }
 .btn-success:active:hover,
 .btn-success.active:hover,
@@ -2895,8 +2895,8 @@ fieldset[disabled] .btn-primary.active {
 .btn-success.active.focus,
 .open > .dropdown-toggle.btn-success.focus {
   color: #ffffff;
-  background-color: #398439;
-  border-color: #255625;
+  background-color: #94ad24;
+  border-color: #657619;
 }
 .btn-success:active,
 .btn-success.active,
@@ -2921,11 +2921,11 @@ fieldset[disabled] .btn-success:active,
 .btn-success.disabled.active,
 .btn-success[disabled].active,
 fieldset[disabled] .btn-success.active {
-  background-color: #5cb85c;
-  border-color: #4cae4c;
+  background-color: #c0da4e;
+  border-color: #b8d639;
 }
 .btn-success .badge {
-  color: #5cb85c;
+  color: #c0da4e;
   background-color: #ffffff;
 }
 .btn-info {
@@ -3981,6 +3981,15 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 /* -----------------------------------------
    LAYOUT
 ----------------------------------------- */
+.embed-mapthat,
+.embed-tree-chart {
+  height: 700px;
+  width: 100%;
+  border: none;
+}
+/* -----------------------------------------
+   HEADERS
+----------------------------------------- */
 body.homepage {
   background: #fdf6d9 url(../images/homepage-top-bg-x.png) repeat-x;
 }
@@ -3997,21 +4006,15 @@ body.homepage h1 {
   background: url(../images/homepage-hero.png) no-repeat center bottom;
   height: 617px;
 }
-.embed-mapthat,
-.embed-tree-chart {
-  height: 700px;
-  width: 100%;
-  border: none;
-}
-header {
+.internal.header {
   background: url(../images/department-hero-x.png) no-repeat center top;
   height: 160px;
 }
-header h1 {
+.internal.header h1 {
   text-transform: uppercase;
 }
 @media (max-width: 767px) {
-  header h1 {
+  .internal.header h1 {
     font-size: 32px;
     line-height: 60px;
     text-align: center;
@@ -4031,21 +4034,31 @@ footer {
    DATA DASHBOARD WIDGETS
 ----------------------------------------- */
 .data-dashboard .data-value {
-  font-size: 32px;
+  font-size: 48px;
   font-weight: bold;
 }
 .data-dashboard .glyphicon {
-  font-size: 30px;
+  font-size: 36px;
   padding-right: 5px;
 }
-.data-dashboard .data-percent {
-  font-size: 46px;
+.data-dashboard .data-description {
+  font-size: 18px;
 }
 @media (max-width: 991px) {
   .data-dashboard {
     border-bottom: 1px solid #c9c3a5;
     padding-bottom: 10px;
   }
+}
+.data-dashboard [class*="status-"] {
+  font-size: 24px;
+  vertical-align: 4px;
+}
+.data-dashboard .status-danger {
+  color: #d9534f;
+}
+.data-dashboard .status-success {
+  color: #c0da4e;
 }
 .data-type-water {
   color: #557981;

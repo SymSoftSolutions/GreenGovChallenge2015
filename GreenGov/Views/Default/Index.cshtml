@@ -33,6 +33,9 @@
                 <div class="data-description">Total gallons of water used</div>
             </div>
             <!-- Chart Here -->
+            <div id='totalwater' style="width:255px;height:120px">
+
+            </div>
         </div>
 
         <div class="col-sm-6 col-md-3">
@@ -41,9 +44,11 @@
                     <span class="glyphicon glyphicon-leaf data-type-recycle"></span>
                     <span class="data-value">143 GWh</span>
                 </div>
-                <div class="data-description">Total gallons of water used</div>
+                <div class="data-description">Total Gigawatts of electricity used/div>
             </div>
             <!-- Chart Here -->
+            <div id='totalelec' style="width:255px;height:120px">
+            </div>
         </div>
 
         <div class="col-sm-6 col-md-3">
@@ -55,6 +60,9 @@
                 <div class="data-description">Total kBtu Energy Used</div>
             </div>
             <!-- Chart Here -->
+            <div id='totalenergy' style="width:255px;height:120px">
+
+            </div>
         </div>
 
         <div class="col-sm-6 col-md-3">
@@ -66,9 +74,195 @@
                 <div class="data-description">Total CO<sub>2</sub> Emmissions in MT</div>
             </div>
             <!-- Chart Here -->
+            <div id='totalco2' style="width:255px;height:120px">
+
+            </div>
         </div>
     </div>
 </div>
+
+<!-- New Untested -->
+<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+<script src="http://code.highcharts.com/highcharts.js" type="text/javascript"></script>
+<script src="http://code.highcharts.com/modules/data.js" type="text/javascript"></script>
+<script src="/JS/d3.min.js"></script>
+<script src="/JS/findDepartments.js"></script>
+<script type="text/javascript">
+    var lineColor = '#6F812A';
+var dataco2 = [
+  3284977.529,
+  3290882.521,
+  3356108.672,
+  2410087.9,
+  1489113.606
+];
+var categoriesco2 = [
+  '2010',
+  '2011',
+  '2012',
+  '2013',
+  '2014'
+]
+$('#totalco2').highcharts({
+  chart: {
+      type: 'line',
+      backgroundColor: 'rgba(0,0,0,0)'
+  },
+series: [{
+    showInLegend: false,
+    name: 'CO2e',
+    color: lineColor,
+        data: dataco2
+    }],
+  title: {
+    text: null
+  },
+  xAxis: {
+      labels: { enabled: false },
+      categories: categoriesco2
+  },
+  yAxis: {
+    title: {
+      text: null
+    }
+  }
+});
+
+var dataenergy = [
+  10175529048,
+  8954086372.3
+];
+var categoriesenergy = [
+  '2013',
+  '2014'
+]
+$('#totalenergy').highcharts({
+  chart: {
+      type: 'line',
+      backgroundColor: 'rgba(0,0,0,0)'
+  },
+series: [{
+    showInLegend: false,
+    name: 'Energy (kBtu)',
+    color: lineColor,
+        data: dataenergy
+    }],
+  title: {
+    text: null
+  },
+  xAxis: {
+      labels: { enabled: false },
+      categories: categoriesenergy
+  },
+  yAxis: {
+    title: {
+      text: null
+    }
+  }
+});
+
+var datawater = [
+  // TODO: Check
+  11230032.4,
+  9198228,
+];
+var catWater = [
+  '2013',
+  '2014'
+]
+$('#totalwater').highcharts({
+  chart: {
+      type: 'line',
+      backgroundColor: 'rgba(0,0,0,0)'
+  },
+series: [{
+    showInLegend: false,
+    name: 'Water (kgal)',
+    color: lineColor,
+        data: datawater
+    }],
+  title: {
+    text: null
+  },
+  xAxis: {
+      labels: { enabled: false },
+      categories: catWater
+  },
+  yAxis: {
+    title: {
+      text: null
+    }
+  }
+});
+
+var dataElec = [
+  // TODO: Check if correct
+  35613899.8 + 1204813644.8,
+  70891819.5 + 1139234902.9
+];
+var catElec = [
+  '2013',
+  '2014'
+]
+$('#totalelec').highcharts({
+  chart: {
+      type: 'line',
+      backgroundColor: 'rgba(0,0,0,0)'
+  },
+series: [{
+    showInLegend: false,
+    name: 'Electricity (GWh)',
+    color: lineColor,
+        data: dataElec
+    }],
+  title: {
+    text: null
+  },
+  xAxis: {
+      labels: { enabled: false },
+      categories: catElec
+  },
+  yAxis: {
+    title: {
+      text: null
+    }
+  }
+});
+
+var dataRec = [
+  // TODO: Check if correct
+  67,
+  70
+];
+var catRec = [
+  '2013',
+  '2014'
+]
+$('#totalrec').highcharts({
+  chart: {
+      type: 'line',
+      backgroundColor: 'rgba(0,0,0,0)'
+  },
+series: [{
+    showInLegend: false,
+    name: 'Electricity (GWh)',
+        data: dataRec
+    }],
+  title: {
+    text: null
+  },
+  xAxis: {
+      labels: { enabled: false },
+      categories: catRec
+  },
+  yAxis: {
+    title: {
+      text: null
+    }
+  }
+});
+
+</script>
 
 <!-- This actually belongs on the department page. -->
 <!--
