@@ -31,14 +31,15 @@ function metricTotals(dataset, field) {
       var total = e
         .values
         .reduce(function (p, c) {
-          var value = Number.parseFloat(c.key)
+          var value = Number.parseFloat(c.key);
+
           if (isNumeric(value)) {
             return p + value
           } else {
             return p
           }
         }, 0);
-      console.log(e.key);
+
       // set the total on the department ackroymn
       out[e.key] = total
       })
@@ -76,7 +77,7 @@ function metricTotals(dataset, field) {
         var waterTotals2013 = metricTotals(data2013, 'Water Use (All Water Sources) (kgal)');
         var waterTotals2014 = metricTotals(data2014, 'Water Use (All Water Sources) (kgal)');
 
-    console.log(waterTotals2013, waterTotals2014);
+    // console.log(waterTotals2013, waterTotals2014);
 
     // Create Charts
     $('#water').highcharts({
@@ -131,16 +132,13 @@ name: 'kgal used',
 
 
 function CO2Totals(dataset) {
-  var out = {}
-  function nameLookUp() {
-    return 'Organization Name';
-  }
+
 
 // filter
 dataset = dataset.filter(function (d) {
   // console.log(deptLookup.CO2e,d, d[deptLookup.CO2e]);
   return d['Organization Name'] == deptLookup.CO2e;
-})
+});
 
   var perDepartment = d3
     .nest()
@@ -157,14 +155,14 @@ dataset = dataset.filter(function (d) {
 
 var data = []
 var categories = []
-console.log(perDepartment);
+// console.log(perDepartment);
   perDepartment[0].values.map(function(yearObj){
         //  per year
         categories.push(yearObj.key);
         data.push(Number.parseFloat(yearObj.values[0].key));
       })
 
-  console.log(categories, data);
+  // console.log(categories, data);
   // Create Charts
   $('#co2').highcharts({
     chart: {
@@ -194,7 +192,72 @@ console.log(perDepartment);
 function Co2Metrics() {
   d3.csv('/Data/CO2/agency_co2_per_year.csv', function(csv) {
     // console.log(csv);
-    CO2Totals(csv)
+    CO2Totals(csv);
+  })
+}
+
+function RecyleTotals(dataset) {
+
+  // filter
+  dataset = dataset.filter(function (d) {
+    // console.log(deptLookup.CO2e,d, d[deptLookup.CO2e]);
+    return d['Agency Name'] == deptLookup.Recycling;
+  });
+
+    var perDepartment = d3
+      .nest()
+      .key(function (d) {
+        return d[deptLookup.Recycling]
+      })
+      .key(function (d) {
+        return d['Report Year']
+      })
+      .key(function(d) {
+        return d['Percentage SABRC']
+      })
+      .entries(dataset);
+
+  var data = []
+  var categories = []
+  // console.log(perDepartment);
+    perDepartment[0].values.map(function(yearObj){
+          //  per year
+          //
+          if(yearObj.key == '2013/2014') {
+            categories.push('2014');
+          } else {
+            categories.push(yearObj.key);
+          }
+          data.push(Number.parseFloat(yearObj.values[0].key));
+        })
+
+    // console.log(categories, data);
+    // Create Charts
+    $('#recycle').highcharts({
+      chart: {
+        type: 'line'
+      },
+    series: [{
+            name: 'Percentage SABRC',
+            data: data
+        }],
+      title: {
+        text: 'SABRC Goals'
+      },
+      xAxis: {
+        categories: categories
+      },
+      yAxis: {
+        title: {
+          text: 'Percentage of Recycled Content Purchased'
+        }
+      }
+    });
+}
+
+function RecyclingMetrics() {
+  d3.csv('/Data/Recycling/AgencyRecycling.csv', function(csv) {
+    RecyleTotals(csv);
   })
 }
 
@@ -202,13 +265,13 @@ function FleetMPGTotals(dataset) {
     // filter
     dataset = dataset.filter(function (d) {
         // console.log(deptLookup.CO2e,d, d[deptLookup.CO2e]);
-        return d['Organization Name'] == deptLookup.Fleet;
-    })
+        return d['Agency'] == deptLookup.Fleet;
+    });
 
     var perDepartment = d3
       .nest()
       .key(function (d) {
-          return d[deptLookup.Fleet]
+          return d['Agency']
       })
       .key(function (d) {
           return d['Year']
@@ -217,10 +280,10 @@ function FleetMPGTotals(dataset) {
           return d['Average MPG']
       })
       .entries(dataset);
-
+    console.log(perDepartment);
     var data = []
     var categories = []
-    console.log(perDepartment);
+
     perDepartment[0].values.map(function (yearObj) {
         //  per year
         categories.push(yearObj.key);
@@ -262,5 +325,6 @@ function FleetMetrics() {
     .ready(function () {
       GetMetrics();
       Co2Metrics();
+      RecyclingMetrics();
       FleetMetrics();
     });

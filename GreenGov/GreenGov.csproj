@@ -211,7 +211,16 @@
     <Content Include="Data\energy2014.csv" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Data\CO2\CO2eByYear.csv" />
+  </ItemGroup>
+  <ItemGroup>
     <Content Include="Data\CO2\agency_co2_per_year.csv" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Data\Fleet\NonRenewableFuelVehiclesByYear.csv" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Data\Fleet\FleetAverageMPGByYear.csv" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Data\Recycling\RecyclingPurchasesByYear.csv" />
@@ -227,7 +236,7 @@
     <Content Include="Data\Fleet\NonRenewableFuelVehiclesByYear.csv" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Data\Recycling\AgencyRecycling.csv" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Data\Fleet\FleetAverageMPGByDeptAndYear.csv" />
@@ -249,7 +258,7 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>False</UseIIS>
+          <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>54469</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
