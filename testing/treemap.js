@@ -21,6 +21,15 @@ var margin = {
   formatNumber = d3.format( ",d" ),
   transitioning;
 
+  var colors = ["#ffffe5","#f7fcb9","#d9f0a3","#addd8e","#78c679","#41ab5d","#238443","#006837","#004529"];
+  // var color = d3.scale.category20c();
+
+  var colorStart = 0;
+
+  var color = function () {
+    return  colors[(++colorStart % colors.length)]
+  }
+
 var x = d3.scale.linear()
   .domain( [ 0, width ] )
   .range( [ 0, width ] );
@@ -98,17 +107,25 @@ grandparent.append( "text" )
 
 
 function isNumeric(n) {
-  return !isNaN(parseFloat(n)) && isFinite(n);
+  // return !isNaN(parseFloat(n)) && isFinite(n);
+  return !isNaN(n);
+
 }
 
+var totalValue = 0;
+
 function convert( root, wantedValue ) {
-  var totalValue = 0;
-  root.map( function ( d ) {
+
+  totalValue = root.reduce(function(pv, d){
     var value =  Number.parseFloat(d[ wantedValue ] )
-      if(isNumeric(value)) {
-        totalValue += value;
-      }
-  } )
+    if(isNumeric(value)) {
+      return pv + value;
+    } else {
+      return pv
+    }
+  }, 0)
+
+  console.log(totalValue);
   var nest = d3.nest()
     .key( function ( d ) {
       // return d[ 'Department Name' ];
@@ -260,9 +277,19 @@ d3.csv( BuildingMetrics2013, function ( root ) {
     g.append( "text" )
       .attr( "dy", ".75em" )
       .text( function ( d ) {
-        return d.name;
+        return d.name + ' ' + (d.value * totalValue / 1000).toFixed(1) + 'k';
       } )
       .call( text );
+
+      // g.append( "text" )
+      //   .attr( "dy", ".75em" )
+      //   .text( function ( d ) {
+      //     return d.value.toFixed(2);
+      //   } )
+      //   .call( text2 );
+
+      g.selectAll("rect.parent")
+        .style("fill", function(d) { return color(d.key); });
 
     function transition( d ) {
       if ( transitioning || !d ) return;
@@ -304,11 +331,44 @@ d3.csv( BuildingMetrics2013, function ( root ) {
   }
 
   function text( text ) {
+    var d = text.datum();
+    var width = x( d.x + d.dx ) - x( d.x );
     text.attr( "x", function ( d ) {
         return x( d.x ) + 6;
       } )
       .attr( "y", function ( d ) {
         return y( d.y ) + 6;
+      } );
+
+  //     text.each(function() {
+  //       var text = d3.select(this),
+  //           words = text.text().split(/\s+/).reverse(),
+  //           word,
+  //           line = [],
+  //           lineNumber = 0,
+  //           lineHeight = 1.1, // ems
+  //           y = text.attr("y"),
+  //           dy = parseFloat(text.attr("dy")),
+  //           tspan = text.text(null).append("tspan").attr("x", 0).attr("y", y).attr("dy", dy + "em");
+  //       while (word = words.pop()) {
+  //         line.push(word);
+  //         tspan.text(line.join(" "));
+  //         if (tspan.node().getComputedTextLength() > width) {
+  //           line.pop();
+  //           tspan.text(line.join(" "));
+  //           line = [word];
+  //           tspan = text.append("tspan").attr("x", 0).attr("y", y).attr("dy", ++lineNumber * lineHeight + dy + "em").text(word);
+  //         }
+  //       }
+  // })
+}
+
+  function text2( text ) {
+    text.attr( "x", function ( d ) {
+        return x( d.x ) + + 20;
+      } )
+      .attr( "y", function ( d ) {
+        return y( d.y ) + 20;
       } );
   }
 
@@ -330,4 +390,6 @@ d3.csv( BuildingMetrics2013, function ( root ) {
   function name( d ) {
     return d.parent ? name( d.parent ) + "." + d.name : d.name;
   }
+
+  
 } );
