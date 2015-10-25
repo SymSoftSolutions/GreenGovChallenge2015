@@ -28,11 +28,11 @@
 }
 
 #attach .grandparent rect {
-  fill: orange;
+  fill: grey;
 }
 
 #attach .grandparent:hover rect {
-  fill: #ee9700;
+  fill: grey;
 }
 
 #attach .children rect.parent,
