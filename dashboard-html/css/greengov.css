@@ -4000,4 +4000,12 @@ body.homepage h1 {
 iframe {
   height: 700px;
   width: 100%;
+  border: none;
+}
+header {
+  background: url(../images/department-hero-x.png) no-repeat center top;
+  height: 160px;
+}
+header h1 {
+  text-transform: uppercase;
 }
