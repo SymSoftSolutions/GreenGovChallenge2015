@@ -149,6 +149,7 @@
     <Content Include="Global.asax" />
     <Content Include="JS\d3.min.js" />
     <Content Include="JS\energyMetrics.js" />
+    <Content Include="JS\findDepartments.js" />
     <Content Include="JS\treemap.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">

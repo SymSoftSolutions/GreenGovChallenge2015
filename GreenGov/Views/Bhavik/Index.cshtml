@@ -20,7 +20,7 @@
         <div id="water" style="float: left; width: 400px; height: 400px"></div>
         <div id="energy" style="float:left;width:400px;height:400px"></div>
         <div style="clear:both;"></div>
-            <div id="anotherOne" style="float:left;width:400px;height:400px"></div>
+            <div id="co2" style="float:left;width:400px;height:400px"></div>
             <div id="anotherTwo" style="float:left;width:400px;height:400px"></div>
         </div>
 
@@ -70,26 +70,6 @@
         });
 
 
-
-            $.get('@Url.Content("~/Data/CO2/CO2eByYear.csv")', function (csv) {
-                $('#anotherOne').highcharts({
-                    chart: {
-                        type: 'line'
-                    },
-                    data: {
-                        csv: csv
-                    },
-                    title: {
-                        text: 'CO2 Emissions'
-                    },
-                    yAxis: {
-                        title: {
-                            text: 'Units of CO2'
-                        }
-                    }
-                });
-            });
-
             $.get('@Url.Content("~/Data/Recycling/RecyclingPurchasesByYear.csv")', function (csv) {
                 $('#anotherTwo').highcharts({
                     chart: {
@@ -116,7 +96,8 @@
         });
 
     </script>
-      <script src="/JS/d3.min.js"></script>
+<script src="/JS/d3.min.js"></script>
+    <script src="/JS/findDepartments.js"></script>
       <script src="/JS/energyMetrics.js"></script>
 </body>
 </html>

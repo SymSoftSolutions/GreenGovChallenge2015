@@ -9,6 +9,10 @@ function isNumeric(n) {
   return !isNaN(n);
 }
 
+var department = getURLParameter('acronym') || 'CHP';
+var deptLookup = findDepartment(department);
+
+
 function metricTotals(dataset, field) {
   var out = {}
 
@@ -55,7 +59,7 @@ function metricTotals(dataset, field) {
 
         //Filter
 
-        var department = getURLParameter('deparment') || 'CDE';
+
         data2013 = data2013
           .filter(function (d) {
             return d['Department'] == department;
@@ -64,6 +68,7 @@ function metricTotals(dataset, field) {
           .filter(function (d) {
             return d['Department'] == department;
           })
+
 
         var energyTotals2013 = metricTotals(data2013, 'Site Energy Use (kBtu)');
         var energyTotals2014 = metricTotals(data2014, 'Site Energy Use (kBtu)');
@@ -82,7 +87,7 @@ function metricTotals(dataset, field) {
             data: [waterTotals2013[department], waterTotals2014[department]]
         }],
       title: {
-        text: 'Water Usage Per Department'
+        text: 'Water Usage Per'
       },
       xAxis: {
         categories: [
@@ -105,7 +110,7 @@ function metricTotals(dataset, field) {
             data: [energyTotals2013[department], energyTotals2014[department]]
         }],
       title: {
-        text: 'Total Energy Usage Per Department'
+        text: 'Total Energy Usage'
       },
       xAxis: {
         categories: [
@@ -123,12 +128,77 @@ function metricTotals(dataset, field) {
   }
 
 
+function CO2Totals(dataset) {
+  var out = {}
+  function nameLookUp() {
+    return 'Organization Name';
+  }
+
+// filter
+dataset = dataset.filter(function (d) {
+  // console.log(deptLookup.CO2e,d, d[deptLookup.CO2e]);
+  return d['Organization Name'] == deptLookup.CO2e;
+})
+
+  var perDepartment = d3
+    .nest()
+    .key(function (d) {
+      return d[deptLookup.CO2e]
+    })
+    .key(function (d) {
+      return d['Emission Year']
+    })
+    .key(function(d) {
+      return d['CO2e']
+    })
+    .entries(dataset);
+
+var data = []
+var categories = []
+console.log(perDepartment);
+  perDepartment[0].values.map(function(yearObj){
+        //  per year
+        categories.push(yearObj.key);
+        data.push(Number.parseFloat(yearObj.values[0].key));
+      })
+
+  console.log(categories, data);
+  // Create Charts
+  $('#co2').highcharts({
+    chart: {
+      type: 'line'
+    },
+  series: [{
+          data: data
+      }],
+    title: {
+      text: 'CO2'
+    },
+    xAxis: {
+      categories: categories
+    },
+    yAxis: {
+      title: {
+        text: 'Site Energy Use (kBtu)'
+      }
+    }
+  });
+
+}
 
 
+
+function Co2Metrics() {
+  d3.csv('/Data/CO2/agency_co2_per_year.csv', function(csv) {
+    // console.log(csv);
+    CO2Totals(csv)
+  })
+}
 
 
 
   $(document)
     .ready(function () {
       GetMetrics();
+Co2Metrics();
     });
