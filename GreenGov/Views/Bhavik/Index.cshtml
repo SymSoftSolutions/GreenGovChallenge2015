@@ -16,31 +16,33 @@
     <div>
         <div id="chartOne" style="float:left;width:400px;height:400px"></div>
         <div id="chartTwo" style="float:left;width:400px;height:400px"></div>
+        <div id="chartThree" style="float:left;width:400px;height:400px"></div>
         <div style="clear:both;"></div>
+        <div id="anotherOne" style="float:left;width:400px;height:400px"></div>
     </div>
 
     <script type="text/javascript">
-        function GetFuelMetrics() {
-            $.get('@Url.Content("~/Data/Fleet/RenewableFuelVehiclesByYear.csv")', function (csv) {
-                $('#chartOne').highcharts({
-                    chart: {
-                        type: 'line'
-                    },
-                    data: {
-                        csv: csv
-                    },
+    function GetFuelMetrics() {
+        $.get('@Url.Content("~/Data/Fleet/RenewableFuelVehiclesByYear.csv")', function (csv) {
+            $('#chartOne').highcharts({
+                chart: {
+                    type: 'line'
+                },
+                data: {
+                    csv: csv
+                },
+                title: {
+                    text: 'Green Vehicles'
+                },
+                yAxis: {
                     title: {
-                        text: 'Green Vehicles'
-                    },
-                    yAxis: {
-                        title: {
-                            text: 'Vehicles'
-                        }
+                        text: 'Vehicles'
                     }
-                });
+                }
             });
+        });
 
-            $.get('@Url.Content("~/Data/Fleet/NonRenewableFuelVehiclesByYear.csv")', function (csv) {
+        $.get('@Url.Content("~/Data/Fleet/NonRenewableFuelVehiclesByYear.csv")', function (csv) {
                 $('#chartTwo').highcharts({
                     chart: {
                         type: 'line'
@@ -54,6 +56,44 @@
                     yAxis: {
                         title: {
                             text: 'Vehicles'
+                        }
+                    }
+                });
+            });
+
+            $.get('@Url.Content("~/Data/Fleet/FleetAverageMPGByYear.csv")', function (csv) {
+                $('#chartThree').highcharts({
+                    chart: {
+                        type: 'line'
+                    },
+                    data: {
+                        csv: csv
+                    },
+                    title: {
+                        text: 'Fleet Average MPG'
+                    },
+                    yAxis: {
+                        title: {
+                            text: 'Vehicles'
+                        }
+                    }
+                });
+            });
+
+            $.get('@Url.Content("~/Data/CO2/CO2eByYear.csv")', function (csv) {
+                $('#anotherOne').highcharts({
+                    chart: {
+                        type: 'line'
+                    },
+                    data: {
+                        csv: csv
+                    },
+                    title: {
+                        text: 'CO2 Emissions'
+                    },
+                    yAxis: {
+                        title: {
+                            text: 'Units of CO2'
                         }
                     }
                 });
