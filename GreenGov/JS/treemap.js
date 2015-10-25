@@ -21,7 +21,7 @@ function getURLParameter(name) {
 var deparmentName = getURLParameter('acronym')  || 'CDCR';
 
 var wantedValue = 'Natural Gas Use (therms)';
-
+// var wantedValue = 'Water Use (All Water Sources) (kgal)';
 var margin = {
     top: 20,
     right: 0,
@@ -43,9 +43,10 @@ var colors = [
 
 var colorStart = 0;
 
-var color = function () {
-  return colors[(++colorStart % colors.length)]
-}
+var color = d3.scale.ordinal().range(colors);
+// var color = function (i) {
+//   return colors[(i % colors.length)]
+// }
 
 var x = d3.scale
   .linear()
@@ -133,8 +134,19 @@ function isNumeric(n) {
 }
 
 
-d3
-  .csv(BuildingMetrics2013, function (root) {
+var savedCsv;
+d3.csv(BuildingMetrics2013, function(csv) {
+  savedCsv = csv;
+  createMap(csv);
+});
+
+function WaterUsage() {
+  wantedValue = 'Water Use (All Water Sources) (kgal)';
+createMap(savedCsv)
+}
+
+function createMap(root) {
+
 
     var root = convert(root, wantedValue);
     //
@@ -204,15 +216,13 @@ d3
         .enter()
         .append("g");
 
-      g
-        .filter(function (d) {
+      g.filter(function (d) {
           return d._children;
         })
         .classed("children", true)
         .on("click", transition);
 
-      g
-        .selectAll(".child")
+      g.selectAll(".child")
         .data(function (d) {
           return d._children || [d];
         })
@@ -244,10 +254,10 @@ d3
       //   } )
       //   .call( text2 );
 
-      g
-        .selectAll("rect.parent")
-        .style("fill", function (d) {
-          return color(d.key);
+      g.selectAll("rect.parent")
+        .style("fill", function (d,i) {
+          console.log(d.area);
+          return color(d.area);
         });
 
       function transition(d) {
@@ -308,7 +318,7 @@ d3
     }
 
     function textName(d) {
-      return d.name + ' ' + (d.value * totalValue / 1000).toFixed(1) + 'k';
+      return d.name + ' ' + (d.value / 1000 * totalValue ).toFixed(1) + 'k';
     }
 
     function text(text) {
@@ -402,7 +412,7 @@ function convert(root, wantedValue) {
       }
     }, 0)
 
-  console.log(root);
+  // console.log(root);
 
   var nest = d3
     .nest()
@@ -414,7 +424,7 @@ function convert(root, wantedValue) {
     })
     .entries(root);
 
-  console.log(nest);
+  // console.log(nest);
   var newNest = {
 
     "name": "California State Deparments",
@@ -427,7 +437,6 @@ function convert(root, wantedValue) {
             .values
             .map(function (location) {
               var value = Number.parseFloat(location.values[0][wantedValue])
-              console.log(value.values);
               value = value / totalValue;
 
               return {
@@ -444,4 +453,4 @@ function convert(root, wantedValue) {
   return newNest
 }
 
-  });
+  }

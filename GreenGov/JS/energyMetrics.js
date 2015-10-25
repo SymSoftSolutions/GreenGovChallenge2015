@@ -242,7 +242,7 @@ function RecyleTotals(dataset) {
             data: data
         }],
       title: {
-        text: 'SABRC Goals'
+        text: 'Recycling Goals'
       },
       xAxis: {
         categories: categories
@@ -321,10 +321,70 @@ function FleetMetrics() {
     })
 }
 
+function FleetNumVehicles(dataset, type, id) {
+    // filter
+    dataset = dataset.filter(function (d) {
+        // console.log(deptLookup.CO2e,d, d[deptLookup.CO2e]);
+        return d['Agency'] == deptLookup.Fleet;
+    });
+
+    var perDepartment = d3
+      .nest()
+      .key(function (d) {
+          return d['Agency']
+      })
+      .key(function (d) {
+          return d['Year']
+      })
+      .key(function (d) {
+          return d[type]
+      })
+      .entries(dataset);
+    console.log(perDepartment);
+    var data = []
+    var categories = []
+
+    perDepartment[0].values.map(function (yearObj) {
+        //  per year
+        categories.push(yearObj.key);
+        data.push(Number.parseFloat(yearObj.values[0].key));
+    })
+
+    console.log(categories, data);
+    // Create Charts
+    $(id).highcharts({
+        chart: {
+            type: 'line'
+        },
+        series: [{
+            data: data
+        }],
+        xAxis: {
+            categories: categories
+        },
+       title: {
+            text: 'Non-Green Vehicles'
+        },
+        yAxis: {
+            title: {
+                text: 'Vehicles'
+            }
+        }
+    });
+}
+
+function FleetType() {
+  d3.csv('/Data/Fleet/FuelTypeVehiclesByDeptAndYear.csv', function(csv) {
+    FleetNumVehicles(csv, 'Non-Renewable Fuel Vehicles', '#fleetnonrenew');
+    FleetNumVehicles(csv, 'Renewable Fuel Vehicles', '#fleetrenew');
+  })
+}
+
   $(document)
     .ready(function () {
       GetMetrics();
       Co2Metrics();
       RecyclingMetrics();
       FleetMetrics();
+FleetType();
     });

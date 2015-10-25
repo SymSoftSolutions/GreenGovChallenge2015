@@ -7,44 +7,44 @@
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-text {
+#attach text {
   pointer-events: none;
   fill:black;
       font-size: 10px;
 }
 
-.grandparent text {
+#attach .grandparent text {
   font-weight: bold;
 }
 
-rect {
+#attach rect {
   fill: none;
   stroke: #fff;
 }
 
-rect.parent,
-.grandparent rect {
+#attach rect.parent,
+#attach .grandparent rect {
   stroke-width: 2px;
 }
 
-.grandparent rect {
+#attach .grandparent rect {
   fill: orange;
 }
 
-.grandparent:hover rect {
+#attach .grandparent:hover rect {
   fill: #ee9700;
 }
 
-.children rect.parent,
-.grandparent rect {
+#attach .children rect.parent,
+#attach .grandparent rect {
   cursor: pointer;
 }
 
-.children rect.parent {
+#attach .children rect.parent {
   fill: #bbb;
   fill-opacity: .5;
 }
 
-.children:hover rect.child {
+#attach .children rect.child {
   fill: #bbb;
 }

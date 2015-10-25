@@ -14,8 +14,8 @@
 </head>
 <body>
     <div>
-        <div id="chartOne" style="float:left;width:400px;height:400px"></div>
-        <div id="chartTwo" style="float: left; width: 400px; height: 400px"></div>
+        <div id="fleetrenew" style="float:left;width:400px;height:400px"></div>
+        <div id="fleetnonrenew" style="float: left; width: 400px; height: 400px"></div>
             <div style="clear:both;"></div>
         <div id="water" style="float: left; width: 400px; height: 400px"></div>
         <div id="energy" style="float:left;width:400px;height:400px"></div>
@@ -33,45 +33,6 @@
 
 
         function GetFuelMetrics() {
-            $.get('@Url.Content("~/Data/Fleet/RenewableFuelVehiclesByYear.csv")', function (csv) {
-                $('#chartOne').highcharts({
-                    chart: {
-                        type: 'line'
-                    },
-                    data: {
-                        csv: csv
-                    },
-
-                    title: {
-                        text: 'Green Vehicles'
-                    },
-                    yAxis: {
-                        title: {
-                            text: 'Vehicles'
-                        }
-                    }
-                });
-            });
-
-
-        $.get('@Url.Content("~/Data/Fleet/NonRenewableFuelVehiclesByYear.csv")', function(csv) {
-            $('#chartTwo').highcharts({
-                chart: {
-                    type: 'line'
-                },
-                data: {
-                    csv: csv
-                },
-                title: {
-                    text: 'Non-Green Vehicles'
-                },
-                yAxis: {
-                    title: {
-                        text: 'Vehicles'
-                    }
-                }
-            });
-        });
 
 
         }
