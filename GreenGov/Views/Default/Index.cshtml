@@ -1,5 +1,82 @@
 ﻿@{
     Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Green Gov Challenge 2015";
+    ViewBag.BodyClass = "homepage";
 }
 
-<h1>Dashboard Home Page</h1>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="homepage-hero"></div>
+            <h1>Investing in California</h1>
+        </div>
+    </div>
+</div>
+
+<div class="container m-b-lg">
+    <div class="row">
+        <div class="col-md-12">
+            <h2 class="text-uppercase text-center">California at a glance for 2015</h2>
+            <div class="col-md-10 col-md-push-1"><p>California is leading the way in adopting green practices and technology. Governor Edmund G. Brown Jr and the state of California has undertaken an ambitious green effort to ensure that the future is green and bright.</p></div>
+        </div>
+    </div>
+</div>
+
+<div class="container m-b-lg">
+    <div class="row">
+        <div class="col-sm-6 col-md-3">
+            <div class="data-dashboard">
+                <div>
+                    <span class="glyphicon glyphicon-tint data-type-water"></span>
+                    <span class="data-value">15 Billion</span>
+                </div>
+                <div class="data-description">Total gallons of water used</div>
+            </div>
+            <!-- Chart Here -->
+        </div>
+
+        <div class="col-sm-6 col-md-3">
+            <div class="data-dashboard">
+                <div>
+                    <span class="glyphicon glyphicon-leaf data-type-recycle"></span>
+                    <span class="data-value">143 GWh</span>
+                </div>
+                <div class="data-description">Total gallons of water used</div>
+            </div>
+            <!-- Chart Here -->
+        </div>
+
+        <div class="col-sm-6 col-md-3">
+            <div class="data-dashboard">
+                <div>
+                    <span class="glyphicon glyphicon-flash data-type-energy"></span>
+                    <span class="data-value">10 Billion</span>
+                </div>
+                <div class="data-description">Total kBtu Energy Used</div>
+            </div>
+            <!-- Chart Here -->
+        </div>
+
+        <div class="col-sm-6 col-md-3">
+            <div class="data-dashboard">
+                <div>
+                    <span class="glyphicon glyphicon-globe data-type-co2e"></span>
+                    <span class="data-value">15 Million</span>
+                </div>
+                <div class="data-description">Total CO<sub>2</sub> Emmissions in MT</div>
+            </div>
+            <!-- Chart Here -->
+        </div>
+    </div>
+</div>
+
+<!-- This actually belongs on the department page. -->
+<!--
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <iframe src="http://builder-stage.mapthat.co/" class="embed-mapthat"></iframe>
+        </div>
+    </div>
+</div>
+-->
