@@ -135,6 +135,7 @@
     <Content Include="images\homepage-hero.png" />
     <Content Include="images\homepage-hero.svg" />
     <Content Include="images\homepage-top-bg-x.png" />
+    <Content Include="JS\bootstrap-select.min.js" />
     <Content Include="JS\d3.min.js" />
     <Content Include="JS\energyMetrics.js" />
     <Content Include="JS\findDepartments.js" />
