@@ -213,6 +213,12 @@
   <ItemGroup>
     <Content Include="Data\CO2\CO2eByYear.csv" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Data\Recycling\RecyclingPurchasesByYear.csv" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Data\Departments.csv" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

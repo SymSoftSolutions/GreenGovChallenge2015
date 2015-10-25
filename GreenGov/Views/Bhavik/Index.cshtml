@@ -19,30 +19,31 @@
         <div id="chartThree" style="float:left;width:400px;height:400px"></div>
         <div style="clear:both;"></div>
         <div id="anotherOne" style="float:left;width:400px;height:400px"></div>
+        <div id="anotherTwo" style="float:left;width:400px;height:400px"></div>
     </div>
 
     <script type="text/javascript">
-    function GetFuelMetrics() {
-        $.get('@Url.Content("~/Data/Fleet/RenewableFuelVehiclesByYear.csv")', function (csv) {
-            $('#chartOne').highcharts({
-                chart: {
-                    type: 'line'
-                },
-                data: {
-                    csv: csv
-                },
-                title: {
-                    text: 'Green Vehicles'
-                },
-                yAxis: {
+        function GetFuelMetrics() {
+            $.get('@Url.Content("~/Data/Fleet/RenewableFuelVehiclesByYear.csv")', function (csv) {
+                $('#chartOne').highcharts({
+                    chart: {
+                        type: 'line'
+                    },
+                    data: {
+                        csv: csv
+                    },
                     title: {
-                        text: 'Vehicles'
+                        text: 'Green Vehicles'
+                    },
+                    yAxis: {
+                        title: {
+                            text: 'Vehicles'
+                        }
                     }
-                }
+                });
             });
-        });
 
-        $.get('@Url.Content("~/Data/Fleet/NonRenewableFuelVehiclesByYear.csv")', function (csv) {
+            $.get('@Url.Content("~/Data/Fleet/NonRenewableFuelVehiclesByYear.csv")', function (csv) {
                 $('#chartTwo').highcharts({
                     chart: {
                         type: 'line'
@@ -94,6 +95,26 @@
                     yAxis: {
                         title: {
                             text: 'Units of CO2'
+                        }
+                    }
+                });
+            });
+
+            $.get('@Url.Content("~/Data/Recycling/RecyclingPurchasesByYear.csv")', function (csv) {
+                $('#anotherTwo').highcharts({
+                    chart: {
+                        type: 'line'
+                    },
+                    data: {
+                        csv: csv
+                    },
+                    title: {
+                        text: 'Recycled Purchases'
+                    },
+                    yAxis: {
+                        min: 0,
+                        title: {
+                            text: 'Percent of Recycled Purchases'
                         }
                     }
                 });
