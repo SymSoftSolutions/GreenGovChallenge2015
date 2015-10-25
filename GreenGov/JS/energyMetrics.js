@@ -324,7 +324,7 @@ function FleetMetrics() {
   $(document)
     .ready(function () {
       GetMetrics();
-Co2Metrics();
-RecyclingMetrics();
+      Co2Metrics();
+      RecyclingMetrics();
       FleetMetrics();
     });
