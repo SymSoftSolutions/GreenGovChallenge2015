@@ -1,0 +1,93 @@
+Department,Department Name,Water Use (All Water Sources) (kgal),Site Energy Use (kBtu),Primary Property Type - Self Selected
+ARB,Air Resources Board,354.1,7559077.4,Laboratory
+CAAM,California African American Museum,,3151121.7,Other - Services
+CADA,Capitol Area Development Authority,,7105403.7,Multifamily Housing
+CAL EXPO,California Exposition & State Fair,182405,36141005,Other
+CAL FIRE,California Department of Forestry and Fire Protection,144160.2,90050730,Fire Station
+CAL OES,California Office of Emergency Services,2090.2,15382918.4,Office
+CAL PERS,California Public Employee's Retirement System,22655.6,87288904.8,Office
+CAL PIA,California Prison Industry Authority,,34695.5,Office
+CAL STRS,California State Teacher's Retirement System,,23568952.7,Office
+CAL TECH,California Department of Technology,12695.7,77172875.3,Office
+CAL TRANS ,California Department of Transportation,776.3,1927195.3,Non-Refrigerated Warehouse
+CAL TRANS ,California Department of Transportation,2581.6,5536793.5,Data Center
+CAL TRANS ,California Department of Transportation,47341.5,51402820.7,Other
+CAL TRANS ,California Department of Transportation,,1887.7,Self-Storage Facility
+CAL TRANS ,California Department of Transportation,3344,15237732,"Repair Services (Vehicle, Shoe, Locksmith, etc.)"
+CAL TRANS ,California Department of Transportation,22374.7,27718212.8,Other - Services
+CAL TRANS ,California Department of Transportation,21445.2,27110240,Other - Utility
+CAL TRANS ,California Department of Transportation,265.1,380280.5,Laboratory
+CAL TRANS ,California Department of Transportation,66580.1,204682649.9,Office
+CAL TRANS ,California Department of Transportation,6085.6,19175968,Other - Technology/Science
+CCC,California Conservation Corps,4789.8,4439683.4,Adult Education
+CDCR,California Department of Corrections & Rehabilitation,7110576.1,5055987931.4,Prison/Incarceration
+CDE,California Department of Education,75436.6,30110827.3,Other
+CDE,California Department of Education,6422.1,5683528.3,Office
+CDFA,California Department of Food and Agriculture,4149,,Other - Public Services
+CDFA,California Department of Food and Agriculture,,14758.6,Office
+CDFA,California Department of Food and Agriculture,52812.3,3760882,Other
+CDFW,California Department of Fish and Wildlife,135.7,35312.7,Other - Lodging/Residential
+CDFW,California Department of Fish and Wildlife,37.9,185212.9,Single Family Home
+CDFW,California Department of Fish and Wildlife,1058.6,9482697.4,Office
+CDFW,California Department of Fish and Wildlife,25894.4,40420240.2,Other
+CDFW,California Department of Fish and Wildlife,4599.6,215565.8,Mixed Use Property
+CDFW,California Department of Fish and Wildlife,3679.9,11596550.5,Other - Public Services
+CDFW,California Department of Fish and Wildlife,9.7,65917.8,Laboratory
+CDFW,California Department of Fish and Wildlife,10926.8,399407.8,Non-Refrigerated Warehouse
+CDPH,California Department of Public Health,1226.8,6946007.9,Office
+CDPH,California Department of Public Health,19037,129155283.9,Mixed Use Property
+CDPH,California Department of Public Health,373.7,3761016.8,Other
+CDVA,California Department of Veterans Affairs,186082,386515200.9,Senior Care Community
+CDVA,California Department of Veterans Affairs,10087.9,267838.5,Other
+CDVA,California Department of Veterans Affairs,1364.9,6989727.7,Office
+CHP,California Highway Patrol,,10048.3,Other
+CHP,California Highway Patrol,33989.4,82748215.1,Office
+CHP,California Highway Patrol,53999.6,15908874.1,College/University
+CLC,California Lottery Commission,107.7,993138,Non-Refrigerated Warehouse
+CLC,California Lottery Commission,5962.3,11878760,Office
+CMD,California Military Department,,19617926.1,Mixed Use Property
+CMD,California Military Department,,,Museum
+CMD,California Military Department,27185.3,64813520.1,Office
+CSC,California Science Center,,1079292.1,Office
+CSC,California Science Center,,2891648.3,Other - Education
+CSC,California Science Center,40920.3,45492997.6,Other - Entertainment/Public Assembly
+DAA,District Agricultural Association,,,Other - Recreation
+DAA,District Agricultural Association,,1894790.8,Other
+DAA,District Agricultural Association,,55933815.1,Other - Entertainment/Public Assembly
+DCA,Department of Consumer Affairs,,898122.5,Non-Refrigerated Warehouse
+DCA,Department of Consumer Affairs,,550346.7,Office
+DDS,Department of Developmental Services,,235436276.7,Mixed Use Property
+DDS,Department of Developmental Services,,,Other - Specialty Hospital
+DDS,Department of Developmental Services,163989.9,339039268.7,Other
+DDS,Department of Developmental Services,,,Hospital (General Medical & Surgical)
+DGS,Department of General Services,39374,289652637.2,Other
+DGS,Department of General Services,219937,945117503.1,Office
+DGS,Department of General Services,71.8,1739119.5,Non-Refrigerated Warehouse
+DGS,Department of General Services,65.1,2932624.3,Data Center
+DMV,Department of Motor Vehicles,59009.1,48347051.8,Office
+DOC,Department of Conservation,0.2,78100.8,Office
+DOJ,Department of Justice,22436.8,16172057.5,Laboratory
+DOR,Department of Rehabilitation,1217.2,4033557,Office
+DPR,Department of Parks and Recreation,,74757.6,Other - Utility
+DPR,Department of Parks and Recreation,2643.2,91600.5,Office
+DPR,Department of Parks and Recreation,116.3,,Other - Public Services
+DPR,Department of Parks and Recreation,71382.4,923498.3,Other - Recreation
+DPR,Department of Parks and Recreation,177293.5,17446590.4,Other
+DPR,Department of Parks and Recreation,6775.5,405838.2,Mixed Use Property
+DSH,Department of State Hospitals,,289387561.9,Outpatient Rehabilitation/Physical Therapy
+DSH,Department of State Hospitals,70041,,Other - Specialty Hospital
+DWR,Department of Water Resources,1259.5,779332.7,Other - Recreation
+DWR,Department of Water Resources,5.7,196604.5,Self-Storage Facility
+DWR,Department of Water Resources,341.1,,Other - Utility
+DWR,Department of Water Resources,4.2,4046342.8,Other - Services
+DWR,Department of Water Resources,7.5,87861.9,Laboratory
+DWR,Department of Water Resources,,84514.4,Manufacturing/Industrial Plant
+DWR,Department of Water Resources,4638.2,6297011.3,Office
+DWR,Department of Water Resources,2724.2,1341630.2,Mixed Use Property
+DWR,Department of Water Resources,6272,2213854.4,Other
+DWR,Department of Water Resources,402,4661343.8,Non-Refrigerated Warehouse
+EDD,Employment Development Department,0,74379.7,Parking
+EDD,Employment Development Department,12446.9,30520310.1,Office
+HCD,Housing and Community Development,117195.5,11148547.1,Other
+SLC,State Lands Commission,12.7,37984.1,Office
+SMMC,Santa Monica Mountains Conservancy ,2545.2,344060.3,Office

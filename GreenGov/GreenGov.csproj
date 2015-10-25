@@ -148,6 +148,7 @@
     <Content Include="CSS\styles.css" />
     <Content Include="Global.asax" />
     <Content Include="JS\d3.min.js" />
+    <Content Include="JS\energyMetrics.js" />
     <Content Include="JS\treemap.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -203,6 +204,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Data\Fleet\RenewableFuelVehiclesByYear.csv" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Data\energy2013.csv" />
+    <Content Include="Data\energy2014.csv" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
