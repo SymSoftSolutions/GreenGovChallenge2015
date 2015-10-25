@@ -3999,8 +3999,14 @@ body.homepage h1 {
   text-align: center;
   color: #294060;
   position: absolute;
-  top: 80px;
+  top: 60px;
   width: 100%;
+  text-shadow: 0 1px 8px #fdf6d9;
+}
+body.homepage .subtext {
+  display: block;
+  font-size: 30px;
+  color: #464545;
 }
 .homepage-hero {
   background: url(../images/homepage-hero.png) no-repeat center bottom;
@@ -4051,8 +4057,7 @@ footer {
   }
 }
 .data-dashboard [class*="status-"] {
-  font-size: 24px;
-  vertical-align: 4px;
+  font-size: 36px;
 }
 .data-dashboard .status-danger {
   color: #d9534f;
