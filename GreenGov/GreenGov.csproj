@@ -210,6 +210,18 @@
     <Content Include="Data\energy2014.csv" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Data\CO2\CO2eByYear.csv" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Data\CO2\agency_co2_per_year.csv" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Data\Fleet\NonRenewableFuelVehiclesByYear.csv" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Data\Fleet\FleetAverageMPGByYear.csv" />
+  </ItemGroup>
+  <ItemGroup>
     <Content Include="Data\Recycling\RecyclingPurchasesByYear.csv" />
   </ItemGroup>
   <ItemGroup>
