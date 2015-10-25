@@ -7,7 +7,8 @@ var jssrc = [
 ];
 
 var csssrc = {
-    "css/greengov.css": "source/less/greengov.less"
+    "css/greengov.css": "source/less/greengov.less",
+    "../GreenGov/css/greengov.css": "source/less/greengov.less"
 }
             
 module.exports = function (grunt) {
