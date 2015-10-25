@@ -36,7 +36,7 @@ var margin = {
   transitioning;
 
 var colors = [
-  "#f7fcb9", "#d9f0a3", "#addd8e", "#78c679", "#41ab5d", "#238443", "#006837", "#004529"
+  "#6f812a", "#9fb739", "#c0da4e", "#dfee9e"
 ];
 // var color = d3.scale.category20c();
 
