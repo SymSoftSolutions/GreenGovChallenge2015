@@ -1,8 +1,9 @@
 // JS Partials - Used in concat & uglify tasks
 var jssrc = [
     // BOOTSTRAP
-    'source/js/bootstrap/button.js',
-    'source/js/bootstrap/transition.js'
+    'source/js/button.js',
+    'source/js/transition.js',
+    'source/js/dropdown.js'
 ];
 
 var csssrc = {
