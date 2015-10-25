@@ -261,11 +261,70 @@ function RecyclingMetrics() {
   })
 }
 
+function FleetMPGTotals(dataset) {
+    // filter
+    dataset = dataset.filter(function (d) {
+        // console.log(deptLookup.CO2e,d, d[deptLookup.CO2e]);
+        return d['Organization Name'] == deptLookup.Fleet;
+    })
 
+    var perDepartment = d3
+      .nest()
+      .key(function (d) {
+          return d[deptLookup.Fleet]
+      })
+      .key(function (d) {
+          return d['Year']
+      })
+      .key(function (d) {
+          return d['Average MPG']
+      })
+      .entries(dataset);
+
+    var data = []
+    var categories = []
+    console.log(perDepartment);
+    perDepartment[0].values.map(function (yearObj) {
+        //  per year
+        categories.push(yearObj.key);
+        data.push(Number.parseFloat(yearObj.values[0].key));
+    })
+
+    console.log(categories, data);
+    // Create Charts
+    $('#fleetmpg').highcharts({
+        chart: {
+            type: 'line'
+        },
+        series: [{
+            data: data
+        }],
+        title: {
+            text: 'Fleet Average MPG'
+        },
+        xAxis: {
+            categories: categories
+        },
+        yAxis: {
+            title: {
+                text: 'Average MPG'
+            }
+        }
+    });
+
+}
+
+function FleetMetrics() {
+    d3.csv('/Data/Fleet/FleetAverageMPGByDeptAndYear.csv', function (csv) {
+        // console.log(csv);
+        FleetMPGTotals(csv)
+    })
+}
 
   $(document)
     .ready(function () {
       GetMetrics();
 Co2Metrics();
 RecyclingMetrics();
+      FleetMetrics();
     });
