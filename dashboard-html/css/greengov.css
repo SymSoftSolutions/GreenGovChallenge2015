@@ -4007,6 +4007,7 @@ body.homepage .subtext {
   display: block;
   font-size: 30px;
   color: #464545;
+  margin-top: 20px;
 }
 .homepage-hero {
   background: url(../images/homepage-hero.png) no-repeat center bottom;
