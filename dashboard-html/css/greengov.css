@@ -7,7 +7,7 @@
    TILES
 ----------------------------------------- */
 .tile-body-small-text {
-  font-size: 12px;
+  font-size: 14px;
   margin-bottom: 8px;
 }
 .tiles-footer::after {

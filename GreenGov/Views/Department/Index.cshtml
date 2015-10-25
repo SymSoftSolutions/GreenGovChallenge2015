@@ -10,10 +10,12 @@
     <meta name="viewport" content="width=device-width" />
     <title>Department Page</title>
     <link rel="stylesheet" href="/CSS/styles.css" media="screen" title="no title" charset="utf-8">
+    <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
 </head>
 <body>
 <div>
     This is the department page with ID @Model.ToString()
+    <div id="deptTest"></div>
 </div>
 
 <button>Show Renewable electricty use</button>
@@ -26,8 +28,27 @@
 <script src="/JS/treemap.js"></script>
 
     <script type="text/javascript">
-        //var depts = d3.csv.parse("@Url.Content("~/Data/Departments.csv")");
-        //alert(depts[0]["Acronym"]);
+        var depts;
+
+        $(document).ready(function () {
+            $.ajax({
+                url: '@Url.Content("~/Data/Departments.csv")',
+                success: function (csv) {
+                    depts = d3.csv.parse(csv);
+
+                    var dept = findDepartment("ARB");
+                    $("#deptTest").html(dept.Sustainability);
+                }
+            });
+        });
+
+        function findDepartment(acronym) {
+            for (var i = 0, len = depts.length; i < len; i++) {
+                if (depts[i].Acronym === acronym)
+                    return depts[i]; // Return as soon as the object is found
+            }
+            return null; // The object was not found
+        }
     </script>
 </body>
 </html>
