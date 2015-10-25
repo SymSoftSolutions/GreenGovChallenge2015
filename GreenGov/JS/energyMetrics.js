@@ -12,6 +12,7 @@ function isNumeric(n) {
 var department = getURLParameter('acronym') || 'CHP';
 var deptLookup = findDepartment(department);
 
+var lineColor = '#6F812A';
 
 function metricTotals(dataset, field) {
   var out = {}
@@ -82,11 +83,13 @@ function metricTotals(dataset, field) {
     // Create Charts
     $('#water').highcharts({
       chart: {
-        type: 'line'
+          type: 'line',
+          backgroundColor: 'rgba(0,0,0,0)'
       },
     series: [{
         showInLegend: false,
         name: 'kgal',
+        color: lineColor,
             data: [waterTotals2013[department], waterTotals2014[department]]
         }],
       title: {
@@ -108,11 +111,13 @@ function metricTotals(dataset, field) {
     // Create Charts
     $('#energy').highcharts({
       chart: {
-        type: 'line'
+          type: 'line',
+          backgroundColor: 'rgba(0,0,0,0)'
       },
     series: [{
         showInLegend: false,
         name: 'kBtu',
+        color: lineColor,
             data: [energyTotals2013[department], energyTotals2014[department]]
         }],
       title: {
@@ -170,11 +175,13 @@ var categories = []
   // Create Charts
   $('#co2').highcharts({
     chart: {
-      type: 'line'
+        type: 'line',
+        backgroundColor: 'rgba(0,0,0,0)'
     },
   series: [{
       showInLegend: false,
       name: ' CO2e',
+      color: lineColor,
           data: data
       }],
     title: {
@@ -241,10 +248,12 @@ function RecyleTotals(dataset) {
     // Create Charts
     $('#recycle').highcharts({
       chart: {
-        type: 'line'
+          type: 'line',
+          backgroundColor: 'rgba(0,0,0,0)'
       },
     series: [{
         showInLegend: false,
+        color: lineColor,
         name: 'SABRC',
             data: data
         }],
@@ -302,11 +311,13 @@ function FleetMPGTotals(dataset) {
     // Create Charts
     $('#fleetmpg').highcharts({
         chart: {
-            type: 'line'
+            type: 'line',
+            backgroundColor: 'rgba(0,0,0,0)'
         },
         series: [{
             showInLegend: false,
             name: 'MPG',
+            color: lineColor,
             data: data
         }],
         title: {
@@ -365,11 +376,13 @@ function FleetNumVehicles(dataset, type, id) {
     // Create Charts
     $(id).highcharts({
         chart: {
-            type: 'line'
+            type: 'line',
+            backgroundColor: 'rgba(0,0,0,0)'
         },
         series: [{
             showInLegend: false,
             name: 'Vehicles',
+            color: lineColor,
             data: data
         }],
         xAxis: {
