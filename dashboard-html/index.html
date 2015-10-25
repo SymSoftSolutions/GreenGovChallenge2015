@@ -1,167 +1,135 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="utf-8">
 	<title>Green Gov 2015</title>
 	<!--#include virtual="ssi/global-head.html" -->
-    <!-- Additional css here -->
-
 </head>
 
-<body class="horizontal-nav ">
-    <!--#include virtual="ssi/global-header.html" -->
-    
+<body class="homepage">
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="homepage-hero"></div>
+            <h1>Investing in California</h1>
+        </div>
+    </div>
+</div>
 
 
-<div id="page-container">
+
+<div class="container m-b-lg">
+    <div class="row">
+        <div class="col-md-12">
+            <h2 class="text-uppercase text-center">California at a glance for 2015</h2>
+            <div class="col-md-10 col-md-push-1"><p>California is leading the way in adopting green practices and technology. Governor Edmod G. Brown Jr and the state of California has undertaken an ambitious green effort  to ensure that the future is green and bright.</p></div>
+        </div>
+    </div>
+</div>
 
 
-<div id="page-content">
-    <div id="wrap">
-        <div id="page-heading">
 
-            <ol class="breadcrumb">
-              <li><a href="index.html">GreenGov Home</a></li>
-            </ol>
-
-              <h1>State Dashboard</h1>
-              <div class="options">
-                <div class="btn-toolbar">
-                    
+<div class="container m-b-lg">
+    <div class="row">
+        <div class="col-sm-6 col-md-3">
+            <div class="data-dashboard">
+                <div>
+                    <span class="glyphicon glyphicon-tint data-type-water"></span>
+                    <span class="data-value">15 Billion</span>
                 </div>
+                <div class="data-description">Total gallons of water used</div>
+            </div>
+            <!-- Chart Here -->
+        </div>
+        
+        <div class="col-sm-6 col-md-3">
+            <div class="data-dashboard">
+                <div>
+                    <span class="glyphicon glyphicon-leaf data-type-recycle"></span>
+                    <span class="data-value">143 GWh</span>
+                </div>
+                <div class="data-description">Total gallons of water used</div>
+            </div>
+            <!-- Chart Here -->
+        </div>
+        
+        <div class="col-sm-6 col-md-3">
+            <div class="data-dashboard">
+                <div>
+                    <span class="glyphicon glyphicon-flash data-type-energy"></span>
+                    <span class="data-value">10 Billion</span>
+                </div>
+                <div class="data-description">Total kBtu Energy Used</div>
+            </div>
+            <!-- Chart Here -->
+        </div>
+        
+        <div class="col-sm-6 col-md-3">
+            <div class="data-dashboard">
+                <div>
+                    <span class="glyphicon glyphicon-globe data-type-co2e"></span>
+                    <span class="data-value">15 Million</span>
+                </div>
+                <div class="data-description">Total CO<sub>2</sub> Emmissions in MT</div>
+            </div>
+            <!-- Chart Here -->
+        </div>
+    </div>
+</div>
+
+
+
+<div class="container m-b-lg">
+    <div class="row">
+        <div class="col-md-6">
+            <h3 class="text-uppercase text-right">View Deparment Metrics</h3>
+        </div>
+        <div class="col-md-6">
+            <form role="form">
+                <div class="form-group">
+                    <select id="deptPicker" class="selectpicker form-control department-picker" title="Please Select" data-width="100%" data-live-search="false">
+                        <option selected>Choose a Department</option>
+                        <option>Air Resources Board (ARB)</option>
+                        <option>California African American Museum (CAAM)</option>
+                        <option>California Exposition & State Fair (CAL EXPO)</option>
+                        <option>...</option>
+                    </select>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <iframe src="http://builder-stage.mapthat.co/" class="embed-mapthat"></iframe>
+        </div>
+    </div>
+</div>
+
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                SymSoft Solutions &copy; 2015 - Green Gov Challenge 2015
             </div>
         </div>
-
-        <div class="container">
-            <div class="row">
-                <!-- Water tile -->
-                <div class="col-md-3 col-sm-6">
-                    <a class="info-tiles tiles-primary" href="#">
-                        <div class="tiles-heading">Total Water Usage</div>
-                        <div class="tiles-body-alt">
-                            <!--i class="fa fa-bar-chart-o"></i-->
-                            <div class="text-center">15 Billion <span class="tile-body-small-text">gal.</span></div>
-                            <small>x change from 2013</small>
-                        </div>
-                        <div class="tiles-footer">more info</div>
-                    </a>
-                    
-                    <div class="data-vis-trend-glance">
-                        Trend Data
-                    </div>
-                </div>
-                <!-- end water tile -->
-                
-                
-                <!-- recycle title -->
-                <div class="col-md-3 col-sm-6">
-                    <a class="info-tiles tiles-success" href="#">
-                        <div class="tiles-heading">Energy from Renewable Sources</div>
-                        <div class="tiles-body-alt">
-                            <!--i class="fa fa-bar-chart-o"></i-->
-                            <div class="text-center">143 <span class="tile-body-small-text">GWh</span></div>
-                            <small>x change from 2013</small>
-                        </div>
-                        <div class="tiles-footer">more info</div>
-                    </a>
-                    
-                    <div class="data-vis-trend-glance">
-                        Trend Data
-                    </div>
-                </div>
-                <!-- end recycle tile -->
-                
-                
-               
-                <!-- energy tile -->
-                <div class="col-md-3 col-xs-12 col-sm-6">
-                    <a class="info-tiles tiles-orange" href="#">
-                        <div class="tiles-heading">Total Energy Used</div>
-                        <div class="tiles-body-alt">
-                            <!--i class="fa fa-bar-chart-o"></i-->
-                            <div class="text-center">10 Billion <span class="tile-body-small-text">kBtu</span></div>
-                            <small>x change from 2013</small>
-                        </div>
-                        <div class="tiles-footer">more info</div>
-                    </a>
-                    <div class="data-vis-trend-glance">
-                        Trend Data
-                    </div>
-                </div>
-                <!-- end energy tile -->
-                
-                
-                <!-- CO2e tile -->
-                <div class="col-md-3 col-xs-12 col-sm-6">
-                    <a class="info-tiles tiles-toyo" href="#">
-                        <div class="tiles-heading">Total CO<sub>2</sub> Emmissions</div>
-                        <div class="tiles-body-alt">
-                            <!--i class="fa fa-bar-chart-o"></i-->
-                            <div class="text-center">15 Million <span class="tile-body-small-text">MT</span></div>
-                            <small>x change from 2013</small>
-                        </div>
-                        <div class="tiles-footer">more info</div>
-                    </a>
-                    <div class="data-vis-trend-glance">
-                        Trend Data
-                    </div>
-                </div>
-                <!-- end CO2e tile -->
-            </div>
-            
-            
-            
-            <div class="row">
-				<div class="col-md-12">
-					<div class="panel panel-primary">
-						<div class="panel-body">
-                            <h3>View Department</h3>
-                            <p>Vestibulum id ligula porta felis euismod semper. Nulla vitae elit libero, a pharetra augue. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.</p>
-							<div class="form-group home-department-selector">
-                                <label class="col-sm-3 control-label text-right sr-only">View Department</label>
-                                <div class="col-sm-6">
-                                    <select class="form-control" id="source">
-                                        <option value="ARB">Air Resources Board (ARB)</option>
-                                        <option value="CAAM">California African American Museum (CAAM)</option>
-                                    </select>
-                                </div>
-                            </div>
-						</div>
-					</div>
-				</div>
-			</div>
-            
-            
-            <div class="row">
-				<div class="col-md-12">
-					<div class="panel panel-primary">
-						<div class="panel-heading">
-							<h4>Map That - Fleet Vehicles</h4>
-							<div class="options">
-						
-							</div>
-						</div>
-						<div class="panel-body">
-							<div class="data-vis-mapthat">
-                                <!-- Insert MapThat Here -->
-                            </div>
-						</div>
-					</div>
-				</div>
-			</div>
-
-        </div> <!-- container -->
-    </div> <!-- #wrap -->
-</div> <!-- page-content -->
+    </div>
+</footer>
 
 
 
 
 
-<!--#include virtual="ssi/global-footer.html" -->
 
-</div> <!-- page-container -->
+
+
+
 
 <!--#include virtual="ssi/global-scripts.html" -->
 </body>

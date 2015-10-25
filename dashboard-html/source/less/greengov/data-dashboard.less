@@ -1,0 +1,44 @@
+/* -----------------------------------------
+   DATA DASHBOARD WIDGETS
+----------------------------------------- */
+
+.data-dashboard {
+    .data-value {
+        font-size:32px;
+        font-weight:bold;
+    }
+    
+    .glyphicon {
+        font-size:30px;
+        padding-right:5px;
+    }
+    
+    // Show percentage larger than other data points
+    .data-percent {
+        font-size:46px;
+    }
+    
+    @media (max-width: @screen-sm-max) {
+        border-bottom:1px solid @rule-color;
+        padding-bottom: (@line-height-computed / 2);
+    }
+}
+
+
+// Data type specific properties
+
+.data-type-water {
+    color:#557981;
+}
+
+.data-type-recycle {
+    color:@brand-primary;
+}
+
+.data-type-energy {
+    color:#d6655a;
+}
+
+.data-type-co2e {
+    color:#866442;
+}

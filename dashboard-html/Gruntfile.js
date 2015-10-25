@@ -1,11 +1,13 @@
 // JS Partials - Used in concat & uglify tasks
 var jssrc = [
     // BOOTSTRAP
-    //'source/js/file.js'
+    'source/js/button.js',
+    'source/js/transition.js',
+    'source/js/dropdown.js'
 ];
 
 var csssrc = {
-    "assets/css/greengov.css": "source/less/greengov.less"
+    "css/greengov.css": "source/less/greengov.less"
 }
             
 module.exports = function (grunt) {
@@ -23,14 +25,14 @@ module.exports = function (grunt) {
           },
           javascripts: {
             src: jssrc,
-            dest: 'assets/js/greengov.js'
+            dest: 'js/greengov.js'
           }
         },
 
         uglify: {
     			my_target: {
     			  files: {
-    				  'js/trc-theme.js': jssrc
+    				  'js/greengov.js': jssrc
     			  }
     			},
     			options: {
@@ -75,7 +77,7 @@ module.exports = function (grunt) {
             ],
             expand: true,
             flatten: true,
-            src: 'assets/css/greengov.css',
+            src: 'css/greengov.css',
             dest: 'css'
           }
         },
@@ -90,22 +92,7 @@ module.exports = function (grunt) {
                 }]
             }
         },
-        
-        webfont: {
-            icons: {
-                src: 'source/icons/*.svg',
-                dest: 'fonts',
-                destCss: 'fonts',
-                options: {
-                    fontFilename: 'icons-trc',
-                    font: 'icons-trc',
-                    //fontHeight:16,
-                    syntax: 'bootstrap',
-                    engine: 'node'
-                }
-            }
-        },
-        
+                        		
         watch: {
             /* watch for less changes */
             less: {
@@ -128,10 +115,10 @@ module.exports = function (grunt) {
                 files: ['source/images/*.{png,jpg,gif,svg}'],
                 tasks: ['newer:imagemin']
             },
-
+            
             /* watch our files for change, reload */
             livereload: {
-                files: ['**/*.html', 'assets/**/*.css', 'assets/**/*.js', 'images/*'],
+                files: ['**/*.html', 'css/*.css', 'js/*.js', 'images/*'],
                 options: {
                 	livereload: true
                 }
