@@ -127,11 +127,18 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Content Include="CSS\greengov.css" />
     <Content Include="CSS\styles.css" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="images\department-hero-x.png" />
+    <Content Include="images\homepage-hero.png" />
+    <Content Include="images\homepage-hero.svg" />
+    <Content Include="images\homepage-top-bg-x.png" />
     <Content Include="JS\d3.min.js" />
     <Content Include="JS\energyMetrics.js" />
     <Content Include="JS\findDepartments.js" />
+    <Content Include="JS\greengov.js" />
     <Content Include="JS\treemap.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -195,6 +202,15 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Data\Fleet\FuelTypeVehiclesByDeptAndYear.csv" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\_Layout.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
