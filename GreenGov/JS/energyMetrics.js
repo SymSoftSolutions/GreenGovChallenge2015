@@ -85,20 +85,22 @@ function metricTotals(dataset, field) {
         type: 'line'
       },
     series: [{
-name: 'kgal used',
+        showInLegend: false,
+        name: 'kgal',
             data: [waterTotals2013[department], waterTotals2014[department]]
         }],
       title: {
-        text: 'Department Water Usage'
+        text: null
       },
       xAxis: {
+          labels: {enabled: false},
         categories: [
           '2013', '2014'
         ]
       },
       yAxis: {
         title: {
-          text: 'Water Use (All Water Sources) (kgal)'
+          text: null
         }
       }
     });
@@ -109,20 +111,22 @@ name: 'kgal used',
         type: 'line'
       },
     series: [{
-          name: 'Total Energy Used (kBtu)',
+        showInLegend: false,
+        name: 'kBtu',
             data: [energyTotals2013[department], energyTotals2014[department]]
         }],
       title: {
-        text: 'Department Energy Usage'
+        text: null
       },
       xAxis: {
-        categories: [
+          labels: { enabled: false },
+          categories: [
           '2013', '2014'
         ]
       },
       yAxis: {
         title: {
-          text: 'Site Energy Use (kBtu)'
+          text: null
         }
       }
     });
@@ -169,18 +173,20 @@ var categories = []
       type: 'line'
     },
   series: [{
-          name: ' State Agency CO2e',
+      showInLegend: false,
+      name: ' CO2e',
           data: data
       }],
     title: {
-      text: 'CO2'
+      text: null
     },
     xAxis: {
-      categories: categories
+        labels: { enabled: false },
+        categories: categories
     },
     yAxis: {
       title: {
-        text: 'Site Energy Use (kBtu)'
+        text: null
       }
     }
   });
@@ -238,18 +244,20 @@ function RecyleTotals(dataset) {
         type: 'line'
       },
     series: [{
-            name: 'Percentage SABRC',
+        showInLegend: false,
+        name: 'SABRC',
             data: data
         }],
       title: {
-        text: 'Recycling Goals'
+        text: null
       },
       xAxis: {
-        categories: categories
+          labels: { enabled: false },
+          categories: categories
       },
       yAxis: {
         title: {
-          text: 'Percentage of Recycled Content Purchased'
+          text: null
         }
       }
     });
@@ -297,17 +305,20 @@ function FleetMPGTotals(dataset) {
             type: 'line'
         },
         series: [{
+            showInLegend: false,
+            name: 'MPG',
             data: data
         }],
         title: {
-            text: 'Fleet Average MPG'
+            text: null
         },
         xAxis: {
+            labels: { enabled: false },
             categories: categories
         },
         yAxis: {
             title: {
-                text: 'Average MPG'
+                text: null
             }
         }
     });
@@ -357,17 +368,20 @@ function FleetNumVehicles(dataset, type, id) {
             type: 'line'
         },
         series: [{
+            showInLegend: false,
+            name: 'Vehicles',
             data: data
         }],
         xAxis: {
+            labels: { enabled: false },
             categories: categories
         },
        title: {
-            text: 'Non-Green Vehicles'
+            text: null
         },
         yAxis: {
             title: {
-                text: 'Vehicles'
+                text: null
             }
         }
     });
