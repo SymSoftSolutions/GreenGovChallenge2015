@@ -2,7 +2,7 @@
 // var Data2014Url = 'https://greengov.data.ca.gov/resource/24pi-kxxa.json';
 var DeparmentThenPropType = 'https://greengov.data.ca.gov/resource/wikn-9ft8.json';
 
-var BuildingMetrics2013 = 'JS/Metrics__2013_.csv'
+var BuildingMetrics2013 = '/JS/Metrics__2013_.csv'
 // TODO
 var BuildingMetrics2014 = ''
 
