@@ -1,0 +1,186 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="GreenGovModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Fleet">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Agency" Type="nvarchar" MaxLength="255" />
+          <Property Name="Report Year" Type="float" />
+          <Property Name="Disposed" Type="nvarchar" MaxLength="255" />
+          <Property Name="Equipment Number" Type="float" />
+          <Property Name="Category" Type="nvarchar" MaxLength="255" />
+          <Property Name="Model Year " Type="float" />
+          <Property Name="Make Model" Type="nvarchar" MaxLength="255" />
+          <Property Name="VIN" Type="nvarchar" MaxLength="255" />
+          <Property Name="License Plate Number" Type="nvarchar" MaxLength="255" />
+          <Property Name="Postal Code" Type="float" />
+          <Property Name="Vehicle Type Desc" Type="nvarchar" MaxLength="255" />
+          <Property Name="Weight Class" Type="nvarchar" MaxLength="255" />
+          <Property Name="Passenger Vehicle On Off Road Owned Leased" Type="nvarchar" MaxLength="255" />
+          <Property Name="Payload Rating" Type="float" />
+          <Property Name="Shipping Weight" Type="float" />
+          <Property Name="Wheel Type" Type="nvarchar" MaxLength="255" />
+          <Property Name="Tire Size" Type="nvarchar" MaxLength="255" />
+          <Property Name="Fuel Type" Type="nvarchar" MaxLength="255" />
+          <Property Name="Engine Configuration" Type="nvarchar" MaxLength="255" />
+          <Property Name="Emissions Type" Type="nvarchar" MaxLength="255" />
+          <Property Name="Primary Application" Type="nvarchar" MaxLength="255" />
+          <Property Name="Secondary Application" Type="nvarchar" MaxLength="255" />
+          <Property Name="Acquisition Delivery Date" Type="datetime" />
+          <Property Name="SUV Justification" Type="nvarchar" MaxLength="255" />
+          <Property Name="ID4X4 Justification" Type="nvarchar" MaxLength="255" />
+          <Property Name="Acquisition Method Reason" Type="nvarchar" MaxLength="255" />
+          <Property Name="Purchase Price" Type="money" />
+          <Property Name="Annul Lease Rate" Type="money" />
+          <Property Name="Acquistion Mileage" Type="float" />
+          <Property Name="Disposition Date" Type="datetime" />
+          <Property Name="Transferred To" Type="nvarchar" MaxLength="255" />
+          <Property Name="Disposition Method" Type="nvarchar" MaxLength="255" />
+          <Property Name="Disposition Reason" Type="nvarchar" MaxLength="255" />
+          <Property Name="Disposition Mileage" Type="float" />
+          <Property Name="Disposition Sold Amount" Type="money" />
+          <Property Name="Fuel Total Fuel Average" Type="nvarchar" MaxLength="255" />
+          <Property Name="Fuel Total" Type="nvarchar" MaxLength="255" />
+          <Property Name="Fuel Average" Type="nvarchar" MaxLength="255" />
+          <Property Name="Total Miles" Type="nvarchar" MaxLength="255" />
+          <Property Name="Dec Prior Year " Type="nvarchar" MaxLength="255" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="GreenGovModelStoreContainer">
+          <EntitySet Name="Fleet" EntityType="Self.Fleet" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="GreenGovModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="GreenGovEntities" annotation:LazyLoadingEnabled="true" >
+          <EntitySet Name="Fleets" EntityType="GreenGovModel.Fleet" />
+        </EntityContainer>
+        <EntityType Name="Fleet">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Agency" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Report_Year" Type="Double" />
+          <Property Name="Disposed" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Equipment_Number" Type="Double" />
+          <Property Name="Category" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Model_Year_" Type="Double" />
+          <Property Name="Make_Model" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="VIN" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="License_Plate_Number" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Postal_Code" Type="Double" />
+          <Property Name="Vehicle_Type_Desc" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Weight_Class" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Passenger_Vehicle_On_Off_Road_Owned_Leased" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Payload_Rating" Type="Double" />
+          <Property Name="Shipping_Weight" Type="Double" />
+          <Property Name="Wheel_Type" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Tire_Size" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Fuel_Type" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Engine_Configuration" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Emissions_Type" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Primary_Application" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Secondary_Application" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Acquisition_Delivery_Date" Type="DateTime" Precision="3" />
+          <Property Name="SUV_Justification" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="ID4X4_Justification" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Acquisition_Method_Reason" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Purchase_Price" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Annul_Lease_Rate" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Acquistion_Mileage" Type="Double" />
+          <Property Name="Disposition_Date" Type="DateTime" Precision="3" />
+          <Property Name="Transferred_To" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Disposition_Method" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Disposition_Reason" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Disposition_Mileage" Type="Double" />
+          <Property Name="Disposition_Sold_Amount" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Fuel_Total_Fuel_Average" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Fuel_Total" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Fuel_Average" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Total_Miles" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Dec_Prior_Year_" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="GreenGovModelStoreContainer" CdmEntityContainer="GreenGovEntities" >
+          <EntitySetMapping Name="Fleets">
+            <EntityTypeMapping TypeName="GreenGovModel.Fleet">
+              <MappingFragment StoreEntitySet="Fleet">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Dec_Prior_Year_" ColumnName="Dec Prior Year " />
+                <ScalarProperty Name="Total_Miles" ColumnName="Total Miles" />
+                <ScalarProperty Name="Fuel_Average" ColumnName="Fuel Average" />
+                <ScalarProperty Name="Fuel_Total" ColumnName="Fuel Total" />
+                <ScalarProperty Name="Fuel_Total_Fuel_Average" ColumnName="Fuel Total Fuel Average" />
+                <ScalarProperty Name="Disposition_Sold_Amount" ColumnName="Disposition Sold Amount" />
+                <ScalarProperty Name="Disposition_Mileage" ColumnName="Disposition Mileage" />
+                <ScalarProperty Name="Disposition_Reason" ColumnName="Disposition Reason" />
+                <ScalarProperty Name="Disposition_Method" ColumnName="Disposition Method" />
+                <ScalarProperty Name="Transferred_To" ColumnName="Transferred To" />
+                <ScalarProperty Name="Disposition_Date" ColumnName="Disposition Date" />
+                <ScalarProperty Name="Acquistion_Mileage" ColumnName="Acquistion Mileage" />
+                <ScalarProperty Name="Annul_Lease_Rate" ColumnName="Annul Lease Rate" />
+                <ScalarProperty Name="Purchase_Price" ColumnName="Purchase Price" />
+                <ScalarProperty Name="Acquisition_Method_Reason" ColumnName="Acquisition Method Reason" />
+                <ScalarProperty Name="ID4X4_Justification" ColumnName="ID4X4 Justification" />
+                <ScalarProperty Name="SUV_Justification" ColumnName="SUV Justification" />
+                <ScalarProperty Name="Acquisition_Delivery_Date" ColumnName="Acquisition Delivery Date" />
+                <ScalarProperty Name="Secondary_Application" ColumnName="Secondary Application" />
+                <ScalarProperty Name="Primary_Application" ColumnName="Primary Application" />
+                <ScalarProperty Name="Emissions_Type" ColumnName="Emissions Type" />
+                <ScalarProperty Name="Engine_Configuration" ColumnName="Engine Configuration" />
+                <ScalarProperty Name="Fuel_Type" ColumnName="Fuel Type" />
+                <ScalarProperty Name="Tire_Size" ColumnName="Tire Size" />
+                <ScalarProperty Name="Wheel_Type" ColumnName="Wheel Type" />
+                <ScalarProperty Name="Shipping_Weight" ColumnName="Shipping Weight" />
+                <ScalarProperty Name="Payload_Rating" ColumnName="Payload Rating" />
+                <ScalarProperty Name="Passenger_Vehicle_On_Off_Road_Owned_Leased" ColumnName="Passenger Vehicle On Off Road Owned Leased" />
+                <ScalarProperty Name="Weight_Class" ColumnName="Weight Class" />
+                <ScalarProperty Name="Vehicle_Type_Desc" ColumnName="Vehicle Type Desc" />
+                <ScalarProperty Name="Postal_Code" ColumnName="Postal Code" />
+                <ScalarProperty Name="License_Plate_Number" ColumnName="License Plate Number" />
+                <ScalarProperty Name="VIN" ColumnName="VIN" />
+                <ScalarProperty Name="Make_Model" ColumnName="Make Model" />
+                <ScalarProperty Name="Model_Year_" ColumnName="Model Year " />
+                <ScalarProperty Name="Category" ColumnName="Category" />
+                <ScalarProperty Name="Equipment_Number" ColumnName="Equipment Number" />
+                <ScalarProperty Name="Disposed" ColumnName="Disposed" />
+                <ScalarProperty Name="Report_Year" ColumnName="Report Year" />
+                <ScalarProperty Name="Agency" ColumnName="Agency" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,68 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Bhavik</title>
+    <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+    <script src="http://code.highcharts.com/highcharts.js" type="text/javascript"></script>
+    <script src="http://code.highcharts.com/modules/data.js" type="text/javascript"></script>
+</head>
+<body>
+    <div>
+        <div id="chartOne" style="float:left;width:400px;height:400px"></div>
+        <div id="chartTwo" style="float:left;width:400px;height:400px"></div>
+        <div style="clear:both;"></div>
+    </div>
+
+    <script type="text/javascript">
+        function GetFuelMetrics() {
+            $.get('@Url.Content("~/Data/Fleet/RenewableFuelVehiclesByYear.csv")', function (csv) {
+                $('#chartOne').highcharts({
+                    chart: {
+                        type: 'line'
+                    },
+                    data: {
+                        csv: csv
+                    },
+                    title: {
+                        text: 'Green Vehicles'
+                    },
+                    yAxis: {
+                        title: {
+                            text: 'Vehicles'
+                        }
+                    }
+                });
+            });
+
+            $.get('@Url.Content("~/Data/Fleet/NonRenewableFuelVehiclesByYear.csv")', function (csv) {
+                $('#chartTwo').highcharts({
+                    chart: {
+                        type: 'line'
+                    },
+                    data: {
+                        csv: csv
+                    },
+                    title: {
+                        text: 'Non-Green Vehicles'
+                    },
+                    yAxis: {
+                        title: {
+                            text: 'Vehicles'
+                        }
+                    }
+                });
+            });
+        }
+
+        $(document).ready(function () {
+            GetFuelMetrics();
+        });
+    </script>
+</body>
+</html>
