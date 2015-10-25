@@ -77,7 +77,7 @@ function metricTotals(dataset, field) {
         var waterTotals2013 = metricTotals(data2013, 'Water Use (All Water Sources) (kgal)');
         var waterTotals2014 = metricTotals(data2014, 'Water Use (All Water Sources) (kgal)');
 
-    console.log(waterTotals2013, waterTotals2014);
+    // console.log(waterTotals2013, waterTotals2014);
 
     // Create Charts
     $('#water').highcharts({
@@ -155,14 +155,14 @@ dataset = dataset.filter(function (d) {
 
 var data = []
 var categories = []
-console.log(perDepartment);
+// console.log(perDepartment);
   perDepartment[0].values.map(function(yearObj){
         //  per year
         categories.push(yearObj.key);
         data.push(Number.parseFloat(yearObj.values[0].key));
       })
 
-  console.log(categories, data);
+  // console.log(categories, data);
   // Create Charts
   $('#co2').highcharts({
     chart: {
@@ -219,7 +219,7 @@ function RecyleTotals(dataset) {
 
   var data = []
   var categories = []
-  console.log(perDepartment);
+  // console.log(perDepartment);
     perDepartment[0].values.map(function(yearObj){
           //  per year
           //
@@ -231,7 +231,7 @@ function RecyleTotals(dataset) {
           data.push(Number.parseFloat(yearObj.values[0].key));
         })
 
-    console.log(categories, data);
+    // console.log(categories, data);
     // Create Charts
     $('#recycle').highcharts({
       chart: {
@@ -265,13 +265,13 @@ function FleetMPGTotals(dataset) {
     // filter
     dataset = dataset.filter(function (d) {
         // console.log(deptLookup.CO2e,d, d[deptLookup.CO2e]);
-        return d['Organization Name'] == deptLookup.Fleet;
-    })
+        return d['Agency'] == deptLookup.Fleet;
+    });
 
     var perDepartment = d3
       .nest()
       .key(function (d) {
-          return d[deptLookup.Fleet]
+          return d['Agency']
       })
       .key(function (d) {
           return d['Year']
@@ -280,10 +280,10 @@ function FleetMPGTotals(dataset) {
           return d['Average MPG']
       })
       .entries(dataset);
-
+    console.log(perDepartment);
     var data = []
     var categories = []
-    console.log(perDepartment);
+
     perDepartment[0].values.map(function (yearObj) {
         //  per year
         categories.push(yearObj.key);

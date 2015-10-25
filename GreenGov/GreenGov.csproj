@@ -238,6 +238,9 @@
   <ItemGroup>
     <Content Include="Data\Recycling\AgencyRecycling.csv" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Data\Fleet\FleetAverageMPGByDeptAndYear.csv" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
