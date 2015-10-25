@@ -3,7 +3,7 @@
 var DeparmentThenPropType =
   'https://greengov.data.ca.gov/resource/wikn-9ft8.json';
 
-var BuildingMetrics2013 = 'Metrics__2013_.csv'
+var BuildingMetrics2013 = 'JS/Metrics__2013_.csv'
 
 /*
 Go from Deparments-> Property -> Values
@@ -21,7 +21,7 @@ var margin = {
   formatNumber = d3.format( ",d" ),
   transitioning;
 
-  var colors = ["#ffffe5","#f7fcb9","#d9f0a3","#addd8e","#78c679","#41ab5d","#238443","#006837","#004529"];
+  var colors = ["#f7fcb9","#d9f0a3","#addd8e","#78c679","#41ab5d","#238443","#006837","#004529"];
   // var color = d3.scale.category20c();
 
   var colorStart = 0;
