@@ -13,6 +13,11 @@ var department = getURLParameter('acronym') || 'CHP';
 var deptLookup = findDepartment(department);
 
 $('#dept-title').text(deptLookup.CO2e)
+
+if (department == 'DGS') {
+    $('#percent-recycle').text("85%")
+}
+
 var lineColor = '#6F812A';
 
 function metricTotals(dataset, field) {

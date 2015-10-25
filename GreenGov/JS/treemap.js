@@ -30,8 +30,7 @@ var margin = {
   width = document.querySelector('#attach')
     .clientWidth,
   // height = width /1.2  - margin.top - margin.bottom,
-  height = document.querySelector('#attach')
-    .clientHeight,
+  height = document.querySelector('#attach').clientHeight,
   formatNumber = d3.format(",d"),
   transitioning;
 
