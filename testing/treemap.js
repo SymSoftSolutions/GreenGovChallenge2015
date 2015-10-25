@@ -242,7 +242,7 @@ d3.csv( BuildingMetrics2013, function ( root ) {
       .datum( d.parent )
       .on( "click", transition )
       .select( "text" )
-      .text( name( d ) );
+      .text( "↩ " + name( d ) );
 
     var g1 = svg.insert( "g", ".grandparent" )
       .datum( d )
@@ -276,10 +276,11 @@ d3.csv( BuildingMetrics2013, function ( root ) {
 
     g.append( "text" )
       .attr( "dy", ".75em" )
-      .text( function ( d ) {
-        return d.name + ' ' + (d.value * totalValue / 1000).toFixed(1) + 'k';
-      } )
+      .text(textName)
       .call( text );
+
+      g.append("title").text(textName)
+
 
       // g.append( "text" )
       //   .attr( "dy", ".75em" )
@@ -330,15 +331,20 @@ d3.csv( BuildingMetrics2013, function ( root ) {
     return g;
   }
 
+  function textName(d){
+      return d.name + ' ' + (d.value * totalValue / 1000).toFixed(1) + 'k';
+  }
+
   function text( text ) {
-    var d = text.datum();
-    var width = x( d.x + d.dx ) - x( d.x );
     text.attr( "x", function ( d ) {
         return x( d.x ) + 6;
       } )
       .attr( "y", function ( d ) {
         return y( d.y ) + 6;
-      } );
+      } )
+      .style("opacity", function(d) { return this.getComputedTextLength() < x(d.x + d.dx) - x(d.x) ? 1 : 0; })
+
+
 
   //     text.each(function() {
   //       var text = d3.select(this),
@@ -388,8 +394,8 @@ d3.csv( BuildingMetrics2013, function ( root ) {
   }
 
   function name( d ) {
-    return d.parent ? name( d.parent ) + "." + d.name : d.name;
+    return d.parent ? name( d.parent ) + " ↩  " + d.name : d.name;
   }
 
-  
+
 } );
